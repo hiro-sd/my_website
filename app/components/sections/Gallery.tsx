@@ -29,20 +29,55 @@ type Photo = {
 const photos: Photo[] = [
   {
     id: 1,
-    image: "/gallery/example.jpg",
+    image: "/gallery/20220304.jpg",
+    date: "2022.03",
+    location: "Hachimanzaka, Hokkaido",
+    description: ""
+  },
+  {
+    id: 2,
+    image: "/gallery/20240114_2.JPG",
+    date: "2024.01",
+    location: "Salar de Uyuni, Bolivia",
+    description: ""
+  },
+  {
+    id: 3,
+    image: "/gallery/20251119.JPG",
+    date: "2025.11",
+    location: "Ninenzaka, Kyoto",
+    description: ""
+  },
+  {
+    id: 4,
+    image: "/gallery/20231223.JPG",
     date: "2023.12",
-    location: "Santa Cruz Beach Boardwalk",
-    description: "With UCSC friends"
-  }
+    location: "Manhattan Bridge, New York",
+    description: ""
+  },
+  {
+    id: 5,
+    image: "/gallery/20231222.JPG",
+    date: "2023.12",
+    location: "Tronto University, Toronto",
+    description: ""
+  },
+  {
+    id: 6,
+    image: "/gallery/20240429.JPG",
+    date: "2024.04",
+    location: "La Jolla Cove, California",
+    description: ""
+  },
 ]
 
 export default function Gallery() {
   return (
     <Container id="gallery" maxWidth="xl" component="section">
-      <Box sx={{ 
+      <Box sx={{
         minHeight: '100vh',
-        display: 'flex', 
-        flexDirection: 'column', 
+        display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         py: { xs: 4, md: 4 },
@@ -50,7 +85,7 @@ export default function Gallery() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        <GradientBackground 
+        <GradientBackground
           sectionId="gallery"
           gradientColors={{
             start: '#60A5FA',  // Light blue
@@ -61,27 +96,25 @@ export default function Gallery() {
         <AnimatedText>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-center relative z-10">Gallery</h1>
         </AnimatedText>
-        
+
         <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} sx={{ position: 'relative', zIndex: 1, maxWidth: 'xl' }}>
-          {photos.map((photo, index) => (
-            <Grid item xs={6} sm={4} md={4} key={photo.id} sx={{ 
-              transform: index % 2 === 0 ? 'translateY(40px)' : 'translateY(0)'
-            }}>
+          {photos.map((photo) => (
+            <Grid item xs={6} sm={4} md={4} key={photo.id}>
               <AnimatedText>
-                <Card 
+                <Card
                   elevation={0}
                   sx={{
-                    height: '100%',
-                    background: theme => theme.palette.mode === 'dark' 
-                      ? 'rgba(0, 0, 0, 0.2)' 
+                    height: { xs: 280, sm: 340, md: 380 },
+                    display: 'flex',
+                    background: theme => theme.palette.mode === 'dark'
+                      ? 'rgba(0, 0, 0, 0.2)'
                       : 'rgba(255, 255, 255, 0.1)',
                     backdropFilter: 'blur(20px)',
                     borderRadius: 4,
-                    border: theme => `1px solid ${
-                      theme.palette.mode === 'dark' 
-                        ? 'rgba(255, 255, 255, 0.1)' 
-                        : 'rgba(255, 255, 255, 0.2)'
-                    }`,
+                    border: theme => `1px solid ${theme.palette.mode === 'dark'
+                      ? 'rgba(255, 255, 255, 0.1)'
+                      : 'rgba(255, 255, 255, 0.2)'
+                      }`,
                     transition: 'all 0.3s ease',
                     '&:hover': {
                       transform: 'translateY(-8px)',
@@ -94,22 +127,32 @@ export default function Gallery() {
                     }
                   }}
                 >
-                  <CardContent sx={{ 
-                    p: { xs: 1.5, sm: 2, md: 3 }
+                  <CardContent sx={{
+                    p: { xs: 1.5, sm: 2, md: 3 },
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column'
                   }}>
-                    <Box sx={{ mb: { xs: 1, sm: 1.5, md: 2 } }}>
+                    <Box sx={{
+                      mb: { xs: 1, sm: 1.5, md: 2 },
+                      position: 'relative',
+                      width: '100%',
+                      aspectRatio: '4 / 3',
+                      overflow: 'hidden',
+                      borderRadius: 2
+                    }}>
                       <Image
                         src={photo.image}
                         alt={photo.description}
-                        width={400}
-                        height={300}
-                        className="rounded-lg object-cover w-full"
+                        fill
+                        sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 400px"
+                        className="object-cover object-center"
                       />
                     </Box>
-                    <Typography variant="body1" sx={{ 
+                    <Typography variant="body1" sx={{
                       fontWeight: 500,
                       mb: { xs: 0.5, sm: 0.75, md: 1 },
-                      fontSize: { 
+                      fontSize: {
                         xs: '0.875rem',
                         sm: '1rem',
                         md: '1.125rem'
@@ -117,9 +160,9 @@ export default function Gallery() {
                     }}>
                       {photo.location}
                     </Typography>
-                    <Typography variant="body2" sx={{ 
+                    <Typography variant="body2" sx={{
                       opacity: 0.7,
-                      fontSize: { 
+                      fontSize: {
                         xs: '0.75rem',
                         sm: '0.875rem',
                         md: '1rem'
@@ -127,10 +170,10 @@ export default function Gallery() {
                     }}>
                       {photo.date}
                     </Typography>
-                    <Typography variant="body2" sx={{ 
+                    <Typography variant="body2" sx={{
                       opacity: 0.7,
                       mt: { xs: 0.5, sm: 0.75, md: 1 },
-                      fontSize: { 
+                      fontSize: {
                         xs: '0.75rem',
                         sm: '0.875rem',
                         md: '1rem'

@@ -7,35 +7,68 @@ import { motion } from "framer-motion"
 interface CourseItem {
   date: string
   title: string
-  description: string
+  description: React.ReactNode
 }
 
-// Example course data - Replace with your own education experience
 const courses: CourseItem[] = [
   {
-    date: "2023 - Present",
-    title: "Your University Name",
-    description: "Your Major | GPA: X.XX"
+    date: "Apr 2020 - Mar 2025",
+    title: "Hokkaido University (Bachelor)",
+    description: (
+      <>
+        <a
+          href="https://www2.fish.hokudai.ac.jp/"
+          target="_blank"
+          className="underline decoration-dotted underline-offset-4 duration-300"
+          onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
+          onMouseLeave={(e) => e.currentTarget.style.color = ''}
+        >
+          Faculty of Fisheries Sciences
+        </a>
+        {' | '}
+        <a
+          href="https://www2.fish.hokudai.ac.jp/faculty-member/kishimura-hideki/"
+          target="_blank"
+          className="underline decoration-dotted underline-offset-4 duration-300"
+          onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
+          onMouseLeave={(e) => e.currentTarget.style.color = ''}
+        >
+          Kishimura Laboratory
+        </a>
+      </>
+    )
   },
   {
-    date: "Fall 2023",
-    title: "Course Name 1",
-    description: "Keyword1 | Keyword2 | Keyword3"
+    date: "Aug 2023 - May 2024",
+    title: "San Diego State University (Exchange)",
+    description: "Took courses in Marine Biology, Biochemistry and CS | GPA: 3.3 / 4.0"
   },
   {
-    date: "Spring 2024", 
-    title: "Course Name 2",
-    description: "Keyword1 | Keyword2 | Keyword3"
-  },
-  {
-    date: "Fall 2024",
-    title: "Course Name 3",
-    description: "Keyword1 | Keyword2 | Keyword3"
-  },
-  {
-    date: "Spring 2025",
-    title: "Course Name 4", 
-    description: "Keyword1 | Keyword2 | Keyword3"
+    date: "Apr 2025 - Mar 2027 (expected)",
+    title: "The University of Tokyo (Master)",
+    description: (
+      <>
+        <a
+          href="https://www.k.u-tokyo.ac.jp/"
+          target="_blank"
+          className="underline decoration-dotted underline-offset-4 duration-300"
+          onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
+          onMouseLeave={(e) => e.currentTarget.style.color = ''}
+        >
+          GSFS
+        </a>
+        {' | '}
+        <a
+          href="https://hapislab.org/"
+          target="_blank"
+          className="underline decoration-dotted underline-offset-4 duration-300"
+          onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
+          onMouseLeave={(e) => e.currentTarget.style.color = ''}
+        >
+          Shinoda / Makino Laboratory
+        </a>
+      </>
+    )
   }
 ]
 
@@ -68,7 +101,7 @@ export default function CourseTimeline() {
       <div className="relative">
         {/* Timeline background line */}
         <div className="absolute left-1/2 top-0 w-[2px] h-full bg-neutral-200 dark:bg-neutral-800 z-0" />
-        
+
         {/* Timeline items */}
         {displayedCourses.map((course, index) => (
           <AnimatedText key={index}>
@@ -102,9 +135,9 @@ export default function CourseTimeline() {
                   {course.description}
                 </p>
               </div>
-              
+
               <div className="relative z-20">
-                <motion.div 
+                <motion.div
                   className="w-3 h-3 sm:w-4 sm:h-4 bg-black dark:bg-white rounded-full"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
@@ -116,7 +149,7 @@ export default function CourseTimeline() {
                   }}
                 />
               </div>
-              
+
               <div className="flex-1" />
             </div>
           </AnimatedText>
@@ -140,10 +173,10 @@ export default function CourseTimeline() {
               "
             >
               Show More
-              <svg 
-                className="w-5 h-5 stroke-black dark:stroke-white" 
-                viewBox="0 0 24 24" 
-                fill="none" 
+              <svg
+                className="w-5 h-5 stroke-black dark:stroke-white"
+                viewBox="0 0 24 24"
+                fill="none"
                 strokeWidth="2"
               >
                 <path d="M19 9l-7 7-7-7" />
@@ -169,10 +202,10 @@ export default function CourseTimeline() {
               "
             >
               Show Less
-              <svg 
-                className="w-5 h-5 stroke-black dark:stroke-white" 
-                viewBox="0 0 24 24" 
-                fill="none" 
+              <svg
+                className="w-5 h-5 stroke-black dark:stroke-white"
+                viewBox="0 0 24 24"
+                fill="none"
                 strokeWidth="2"
               >
                 <path d="M5 15l7-7 7 7" />
