@@ -19,11 +19,11 @@ import React from 'react'
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills"},
-  { name: "Education", href: "#education" },
-  { name: "Experience", href: "#experience"},
-  { name: "Projects", href: "#projects"},
-  { name: "Gallery", href: "#gallery"},
+  { name: "Projects", href: "#projects" },
+  // { name: "Skills", href: "#skills"},
+  { name: "Backgrounds", href: "#backgrounds" },
+  // { name: "Experience", href: "#experience" },
+  { name: "Gallery", href: "#gallery" },
 ]
 
 export default function Navbar() {
@@ -57,7 +57,7 @@ export default function Navbar() {
     if (activeItem && underlineRef.current && navRef.current) {
       const rect = activeItem.getBoundingClientRect()
       const navRect = navRef.current.getBoundingClientRect()
-      
+
       underlineRef.current.style.left = `${rect.left - navRect.left}px`
       underlineRef.current.style.width = `${rect.width}px`
     }
@@ -65,7 +65,7 @@ export default function Navbar() {
 
   const scrollToSection = (href: string) => {
     const target = document.querySelector(href) as HTMLElement
-    
+
     if (target) {
       const targetPosition = target.offsetTop - NAVBAR_HEIGHT
       window.scrollTo({
@@ -91,7 +91,7 @@ export default function Navbar() {
             ref={underlineRef}
             className="absolute bottom-0 h-[2px] bg-neutral-950 dark:bg-neutral-50 transition-all duration-300 ease-out"
           />
-          
+
           {navItems.map((item) => (
             <li key={item.name}>
               <a

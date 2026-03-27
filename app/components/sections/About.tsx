@@ -14,10 +14,10 @@ export default function About() {
           <AnimatedText>
             <div className="space-y-4">
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Here, you can introduce your basic background information. Include your name, major, education and other basic information. This is an excellent place to showcase your personal characteristics.
+                水産から情報系に変更したことや、留学したことなどを書く。研究内容も簡単に書く。
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                You can describe your professional skills and experience in detail. Highlight your tech stack, project experience, and achievements in relevant fields. This information will help visitors better understand your professional capabilities.
+                何を書くか未定。
               </p>
             </div>
           </AnimatedText>

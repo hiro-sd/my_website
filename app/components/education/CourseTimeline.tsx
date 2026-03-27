@@ -12,6 +12,11 @@ interface CourseItem {
 
 const courses: CourseItem[] = [
   {
+    date: "Apr 2017 - Mar 2020",
+    title: "Yachiyo Shoin High School",
+    description: ""
+  },
+  {
     date: "Apr 2020 - Mar 2025",
     title: "Hokkaido University (Bachelor)",
     description: (
@@ -41,7 +46,7 @@ const courses: CourseItem[] = [
   {
     date: "Aug 2023 - May 2024",
     title: "San Diego State University (Exchange)",
-    description: "Took courses in Marine Biology, Biochemistry and CS | GPA: 3.3 / 4.0"
+    description: "Took courses in Marine Biology, Biochemistry, and CS | GPA: 3.3 / 4.0"
   },
   {
     date: "Apr 2025 - Mar 2027 (expected)",
@@ -214,6 +219,55 @@ export default function CourseTimeline() {
           </div>
         </AnimatedText>
       )}
+
+      {/* Publications Section */}
+      <AnimatedText>
+        <div className="mt-8 space-y-2 mx-auto max-w-6xl">
+          <h2 className="text-xl font-bold text-[var(--foreground)] border-l-4 border-[rgba(210,83,181,0.5)] pl-4 py-1">Publications</h2>
+
+          <div className="space-y-3">
+            <div>
+              <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2 underline decoration-1 underline-offset-4 decoration-[var(--foreground)]/30">Conference Paper</h3>
+              <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
+                ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;
+                <a
+                  href="https://conference.vrsj.org/ac2025/program/doc/3C1-11.pdf"
+                  target="_blank"
+                  className="underline decoration-dotted underline-offset-4 duration-300"
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = ''}
+                >
+                  Rotation Axis Control in Sphere Levitation Using Ultrasonic Phased Array
+                </a>
+                &quot; The 30th Annual Conference of the Virtual Reality Society of Japan, 2025, pp. 3C1-11, Sep.17-19, Osaka.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2 underline decoration-1 underline-offset-4 decoration-[var(--foreground)]/30">Thesis</h3>
+              <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
+                ・Hiroto Yoshida, Yuya Kumagai, Hideki Kishimura. &quot;A Study on the Extraction and Purification of Fucoidan Derived from Saccharina japonica and Its Structure and Antioxidant Activity Under Different Conditions&quot; Bachelor&apos;s Thesis, Hokkaido University. February 2025.
+              </p>
+            </div>
+          </div>
+        </div>
+      </AnimatedText>
+
+      {/* Certification Section */}
+      <AnimatedText>
+        <div className="mt-8 space-y-2 mx-auto max-w-6xl">
+          <h2 className="text-xl font-bold text-[var(--foreground)] border-l-4 border-[rgba(210,83,181,0.5)] pl-4 py-1">Certifications</h2>
+          <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
+            ・Sep 2025 - Microsoft Certified: Security, Compliance, and Identity Fundamentals <br />
+            ・Jul 2025 - 基本情報技術者試験 | Fundamental Information Technology Engineer Examination <br />
+            ・Jun 2024 - TOEIC Listening & Reading 945 <br />
+            ・Nov 2022 - TOEFL iBT 84
+          </p>
+        </div>
+      </AnimatedText>
+
+      {/* Bottom spacing for next section */}
+      <div className="pb-16 md:pb-24"></div>
     </div>
   )
 }

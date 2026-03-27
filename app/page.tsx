@@ -33,26 +33,26 @@ export default function Home() {
         <About />
 
         {/* Skills section - Add your skills in /components/sections/MySkills */}
-        <MySkills />
+        {/* <MySkills /> */}
+
+        {/* Projects section - Showcase your projects in /components/sections/Projects */}
+        <Projects />
 
         {/* Education section - Edit timeline in /components/education/CourseTimeline */}
-        <section id="education" className="relative">
+        <section id="backgrounds" className="relative">
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             p: 4,
           }}>
-            <h1 className="text-4xl font-bold mb-12 text-center">Backgroud</h1>
+            <h1 className="text-4xl font-bold mb-12 text-center">Backgrouds</h1>
             <CourseTimeline />
           </Box>
         </section>
 
         {/* Experience section - Add your work history in /components/sections/Experience */}
-        <Experience />
-
-        {/* Projects section - Showcase your projects in /components/sections/Projects */}
-        <Projects />
+        {/* <Experience /> */}
 
         {/* Gallery section - Add your photos in /components/sections/Gallery */}
         <Gallery />
