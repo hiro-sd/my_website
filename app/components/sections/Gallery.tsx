@@ -29,46 +29,46 @@ type Photo = {
 const photos: Photo[] = [
   {
     id: 1,
-    image: "/gallery/20220304.jpg",
-    date: "2022.03",
-    location: "Hachimanzaka, Hokkaido",
+    image: "/gallery/20251119.JPG",
+    date: "2025.11.19",
+    location: "Ninenzaka, Kyoto",
     description: ""
   },
   {
     id: 2,
-    image: "/gallery/20240114_2.JPG",
-    date: "2024.01",
-    location: "Salar de Uyuni, Bolivia",
+    image: "/gallery/20240429.JPG",
+    date: "2024.04.29",
+    location: "La Jolla Cove, California",
     description: ""
   },
   {
     id: 3,
-    image: "/gallery/20251119.JPG",
-    date: "2025.11",
-    location: "Ninenzaka, Kyoto",
+    image: "/gallery/20240114_2.JPG",
+    date: "2024.01.14",
+    location: "Salar de Uyuni, Bolivia",
     description: ""
   },
   {
     id: 4,
     image: "/gallery/20231223.JPG",
-    date: "2023.12",
+    date: "2023.12.23",
     location: "Manhattan Bridge, New York",
     description: ""
   },
   {
     id: 5,
     image: "/gallery/20231222.JPG",
-    date: "2023.12",
+    date: "2023.12.22",
     location: "Tronto University, Toronto",
     description: ""
   },
   {
     id: 6,
-    image: "/gallery/20240429.JPG",
-    date: "2024.04",
-    location: "La Jolla Cove, California",
+    image: "/gallery/20220304.jpg",
+    date: "2022.03.04",
+    location: "Hachimanzaka, Hokkaido",
     description: ""
-  },
+  }
 ]
 
 export default function Gallery() {
@@ -137,16 +137,19 @@ export default function Gallery() {
                       mb: { xs: 1, sm: 1.5, md: 2 },
                       position: 'relative',
                       width: '100%',
-                      aspectRatio: '4 / 3',
+                      height: { xs: 180, sm: 220, md: 260 },
                       overflow: 'hidden',
-                      borderRadius: 2
+                      borderRadius: 2,
+                      background: theme => theme.palette.mode === 'dark'
+                        ? 'rgba(255, 255, 255, 0.04)'
+                        : 'rgba(0, 0, 0, 0.04)'
                     }}>
                       <Image
                         src={photo.image}
                         alt={photo.description}
                         fill
                         sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 400px"
-                        className="object-cover object-center"
+                        className="object-contain object-center"
                       />
                     </Box>
                     <Typography variant="body1" sx={{

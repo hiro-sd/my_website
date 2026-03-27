@@ -9,8 +9,8 @@ export default function Hero() {
   return (
     <section id="home" className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <FloatingElements />
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <AnimatedText className="flex flex-col items-center sm:items-start gap-4">
+      <main className="flex flex-col gap-8 row-start-2 items-center">
+        <AnimatedText className="flex flex-col items-center gap-4">
           <Image
             className="rounded-full"
             src="/20250323.JPG" // Replace with your avatar image path in public folder
@@ -26,7 +26,7 @@ export default function Hero() {
         </AnimatedText>
 
         <AnimatedText
-          className="max-w-2xl text-center sm:text-left"
+          className="max-w-2xl text-center"
         >
           <p className="text-foreground/80 leading-relaxed">
             Konnichiwa🖐️ I am a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 hover:text-[#d253b5] duration-300">Shinoda / Makino Laboratory</a>
