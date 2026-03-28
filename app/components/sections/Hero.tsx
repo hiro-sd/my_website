@@ -29,7 +29,7 @@ export default function Hero() {
           className="max-w-2xl text-center"
         >
           <p className="text-foreground/80 leading-relaxed">
-            Konnichiwa🖐️ I am a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 hover:text-[#d253b5] duration-300">Shinoda / Makino Laboratory</a>
+            I'm a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 hover:text-[#d253b5] duration-300">Shinoda / Makino Laboratory</a>
             , <a href="https://www.k.u-tokyo.ac.jp/" target="_blank" className="underline decoration-dotted underline-offset-4 hover:text-[#d253b5] duration-300">GSFS</a>, UTokyo.<br />
             My research interests include Acourstic Levitation, Human Computer Interaction, and 3D User Interface.<br />
           </p>

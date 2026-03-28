@@ -31,7 +31,7 @@ type Project = {
 // 2. Place project screenshots in public/project/ directory
 // 3. Sort projects in reverse chronological order
 // 4. Project descriptions should highlight core features and technical highlights
-const projects: Project[] = [
+const projects: Project[] = [ // TODO: Edit this section.
   {
     id: 1,
     title: "Example Project 1",
@@ -42,7 +42,7 @@ const projects: Project[] = [
     link: "https://github.com/username/project1"
   },
   {
-    id: 2, 
+    id: 2,
     title: "Example Project 2",
     description: "Another example project. Description can include: 1) Problems solved 2) Technical solutions used 3) Results achieved 4) What you learned",
     period: "2023.10 - 2023.12",
@@ -65,7 +65,7 @@ export default function Projects() {
         relative
         overflow-hidden
       ">
-        <GradientBackground 
+        <GradientBackground
           sectionId="projects"
           gradientColors={{
             start: '#F43F5E',  // Light rose
@@ -78,12 +78,12 @@ export default function Projects() {
             Projects
           </h1>
         </AnimatedText>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 relative z-0 max-w-6xl w-full">
           {projects.map((project) => (
             <div key={project.id}>
               <AnimatedText>
-                <div 
+                <div
                   onClick={() => {
                     setSelectedProject(project.id)
                     setModalOpen(true)
@@ -108,19 +108,19 @@ export default function Projects() {
                       className="rounded-lg object-cover"
                     />
                   </div>
-                  
+
                   <h2 className="text-2xl font-semibold mb-2">
                     {project.title}
                   </h2>
-                  
+
                   <p className="text-base text-gray-600 dark:text-gray-400 mb-2">
                     {project.period}
                   </p>
-                  
+
                   <p className="text-base text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.skills.map((skill) => (
                       <span

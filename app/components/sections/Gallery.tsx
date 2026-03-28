@@ -36,35 +36,63 @@ const photos: Photo[] = [
   },
   {
     id: 2,
+    image: "/gallery/20240507.JPG",
+    date: "2024.05.07",
+    location: "San Diego State University, California",
+    description: ""
+  },
+  {
+    id: 3,
     image: "/gallery/20240429.JPG",
     date: "2024.04.29",
     location: "La Jolla Cove, California",
     description: ""
   },
   {
-    id: 3,
-    image: "/gallery/20240114_2.JPG",
+    id: 4,
+    image: "/gallery/20240405.JPG",
+    date: "2024.04.05",
+    location: "UNAM Central Library, Mexico City",
+    description: ""
+  },
+  {
+    id: 5,
+    image: "/gallery/20240114.JPG",
     date: "2024.01.14",
     location: "Salar de Uyuni, Bolivia",
     description: ""
   },
   {
-    id: 4,
+    id: 6,
+    image: "/gallery/20240103.JPG",
+    date: "2024.01.03",
+    location: "Plaza de Bolívar, Bogota",
+    description: ""
+  },
+  {
+    id: 7,
     image: "/gallery/20231223.JPG",
     date: "2023.12.23",
     location: "Manhattan Bridge, New York",
     description: ""
   },
   {
-    id: 5,
+    id: 8,
     image: "/gallery/20231222.JPG",
     date: "2023.12.22",
     location: "Tronto University, Toronto",
     description: ""
   },
   {
-    id: 6,
-    image: "/gallery/20220304.jpg",
+    id: 9,
+    image: "/gallery/20230730.JPG",
+    date: "2023.07.30",
+    location: "Jōdogahama, Iwate",
+    description: ""
+  },
+  {
+    id: 10,
+    image: "/gallery/20220304.JPG",
     date: "2022.03.04",
     location: "Hachimanzaka, Hokkaido",
     description: ""

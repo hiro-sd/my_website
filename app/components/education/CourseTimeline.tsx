@@ -220,6 +220,19 @@ export default function CourseTimeline() {
         </AnimatedText>
       )}
 
+      {/* Internship Section */}
+      <AnimatedText>
+        <div className="mt-8 space-y-2 mx-auto max-w-6xl">
+          <h2 className="text-xl font-bold text-[var(--foreground)] border-l-4 border-[rgba(210,83,181,0.5)] pl-4 py-1">Internships</h2>
+          <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
+            ・Oct 2025 - Feb 2026: SAP Japan (Support Engineer, Internship) <br />
+            ・Aug 2025 - Sep 2025: Microsoft Japan (Techinical Support Engineer, Internship)<br />
+            ・Apr 2025 - July 2025: And AI (Flutter Engineer, Internship)<br />
+            ・Mar 2021 - Mar 2022: Starbucks Coffee Japan (Barista, Part time job)
+          </p>
+        </div>
+      </AnimatedText>
+
       {/* Publications Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
@@ -260,8 +273,8 @@ export default function CourseTimeline() {
           <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
             ・Sep 2025 - Microsoft Certified: Security, Compliance, and Identity Fundamentals <br />
             ・Jul 2025 - 基本情報技術者試験 | Fundamental Information Technology Engineer Examination <br />
-            ・Jun 2024 - TOEIC Listening & Reading 945 <br />
-            ・Nov 2022 - TOEFL iBT 84
+            ・Jun 2024 - TOEIC Listening & Reading: 945 <br />
+            ・Nov 2022 - TOEFL iBT: 84
           </p>
         </div>
       </AnimatedText>

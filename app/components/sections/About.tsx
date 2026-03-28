@@ -2,7 +2,7 @@
 
 import AnimatedText from "../common/AnimatedText"
 
-export default function About() {
+export default function About() { // TODO: Edit this section.
   return (
     <section id="about" className="min-h-screen w-full flex items-center justify-center p-8">
       <div className="max-w-2xl space-y-12">
