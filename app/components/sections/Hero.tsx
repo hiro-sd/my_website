@@ -19,7 +19,7 @@ export default function Hero() {
             height={500}
             priority
           />
-          <h1 className="text-4xl font-bold">Hiroto Yoshida</h1>
+          <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400">Hiroto Yoshida</h1>
           <p className="text-lg text-foreground/80 font-[family-name:var(--font-geist-mono)]">
             2002 / 01 / 14 - Born in Chiba, Japan
           </p>
@@ -29,8 +29,8 @@ export default function Hero() {
           className="max-w-2xl text-center"
         >
           <p className="text-foreground/80 leading-relaxed">
-            I'm a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 hover:text-[#d253b5] duration-300">Shinoda / Makino Laboratory</a>
-            , <a href="https://www.k.u-tokyo.ac.jp/" target="_blank" className="underline decoration-dotted underline-offset-4 hover:text-[#d253b5] duration-300">GSFS</a>, UTokyo.<br />
+            I'm a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">Shinoda / Makino Laboratory</a>
+            , <a href="https://www.k.u-tokyo.ac.jp/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">GSFS</a>, UTokyo.<br />
             My research interests include Acourstic Levitation, Human Computer Interaction, and 3D User Interface.<br />
           </p>
         </AnimatedText>
@@ -41,6 +41,7 @@ export default function Hero() {
           <a
             className="
               relative
+              group
               z-20
               rounded-full border border-solid border-black/[.08] dark:border-white/[.145] 
               transition-colors flex items-center justify-center 
@@ -61,11 +62,12 @@ export default function Hero() {
               height={20}
               sizes="20px"
             />
-            <span className="relative z-20">GitHub</span>
+            <span className="relative z-20 transition-all duration-300 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-purple-600 dark:group-hover:from-purple-400 dark:group-hover:via-pink-400 dark:group-hover:to-purple-400">GitHub</span>
           </a>
           <a
             className="
               relative
+              group
               z-20
               rounded-full border border-solid border-black/[.08] dark:border-white/[.145] 
               transition-colors flex items-center justify-center 
@@ -87,11 +89,12 @@ export default function Hero() {
               height={20}
               sizes="20px"
             />
-            <span className="relative z-20">LinkedIn</span>
+            <span className="relative z-20 transition-all duration-300 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-purple-600 dark:group-hover:from-purple-400 dark:group-hover:via-pink-400 dark:group-hover:to-purple-400">LinkedIn</span>
           </a>
           <a
             className="
               relative
+              group
               z-20
               rounded-full border border-solid border-black/[.08] dark:border-white/[.145] 
               transition-colors flex items-center justify-center 
@@ -113,11 +116,12 @@ export default function Hero() {
               height={20}
               sizes="20px"
             />
-            <span className="relative z-20">Email</span>
+            <span className="relative z-20 transition-all duration-300 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-purple-600 dark:group-hover:from-purple-400 dark:group-hover:via-pink-400 dark:group-hover:to-purple-400">Email</span>
           </a>
           <a
             className="
               relative
+              group
               z-20
               rounded-full border border-solid border-black/[.08] dark:border-white/[.145] 
               transition-colors flex items-center justify-center 
@@ -132,7 +136,7 @@ export default function Hero() {
             rel="noopener noreferrer"
           >
             <FiInstagram className="mr-1 sm:mr-2" size={20} aria-hidden="true" />
-            <span className="relative z-20">Instagram</span>
+            <span className="relative z-20 transition-all duration-300 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-purple-600 dark:group-hover:from-purple-400 dark:group-hover:via-pink-400 dark:group-hover:to-purple-400">Instagram</span>
           </a>
         </AnimatedText>
       </main>

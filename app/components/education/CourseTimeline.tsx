@@ -10,6 +10,9 @@ interface CourseItem {
   description: React.ReactNode
 }
 
+const gradientHoverLinkClass =
+  'underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400'
+
 const courses: CourseItem[] = [
   {
     date: "Apr 2017 - Mar 2020",
@@ -18,15 +21,13 @@ const courses: CourseItem[] = [
   },
   {
     date: "Apr 2020 - Mar 2025",
-    title: "Hokkaido University (Bachelor)",
+    title: "Hokkaido University (B.S.)",
     description: (
       <>
         <a
           href="https://www2.fish.hokudai.ac.jp/"
           target="_blank"
-          className="underline decoration-dotted underline-offset-4 duration-300"
-          onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = ''}
+          className={gradientHoverLinkClass}
         >
           Faculty of Fisheries Sciences
         </a>
@@ -34,9 +35,7 @@ const courses: CourseItem[] = [
         <a
           href="https://www2.fish.hokudai.ac.jp/faculty-member/kishimura-hideki/"
           target="_blank"
-          className="underline decoration-dotted underline-offset-4 duration-300"
-          onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = ''}
+          className={gradientHoverLinkClass}
         >
           Kishimura Laboratory
         </a>
@@ -50,15 +49,13 @@ const courses: CourseItem[] = [
   },
   {
     date: "Apr 2025 - Mar 2027 (expected)",
-    title: "The University of Tokyo (Master)",
+    title: "The University of Tokyo (M.S.)",
     description: (
       <>
         <a
           href="https://www.k.u-tokyo.ac.jp/"
           target="_blank"
-          className="underline decoration-dotted underline-offset-4 duration-300"
-          onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = ''}
+          className={gradientHoverLinkClass}
         >
           GSFS
         </a>
@@ -66,9 +63,7 @@ const courses: CourseItem[] = [
         <a
           href="https://hapislab.org/"
           target="_blank"
-          className="underline decoration-dotted underline-offset-4 duration-300"
-          onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = ''}
+          className={gradientHoverLinkClass}
         >
           Shinoda / Makino Laboratory
         </a>
@@ -220,23 +215,10 @@ export default function CourseTimeline() {
         </AnimatedText>
       )}
 
-      {/* Internship Section */}
-      <AnimatedText>
-        <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="text-xl font-bold text-[var(--foreground)] border-l-4 border-[rgba(210,83,181,0.5)] pl-4 py-1">Internships</h2>
-          <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
-            ・Oct 2025 - Feb 2026: SAP Japan (Support Engineer, Internship) <br />
-            ・Aug 2025 - Sep 2025: Microsoft Japan (Techinical Support Engineer, Internship)<br />
-            ・Apr 2025 - July 2025: And AI (Flutter Engineer, Internship)<br />
-            ・Mar 2021 - Mar 2022: Starbucks Coffee Japan (Barista, Part time job)
-          </p>
-        </div>
-      </AnimatedText>
-
       {/* Publications Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="text-xl font-bold text-[var(--foreground)] border-l-4 border-[rgba(210,83,181,0.5)] pl-4 py-1">Publications</h2>
+          <h2 className="text-xl font-bold">Publications</h2>
 
           <div className="space-y-3">
             <div>
@@ -246,9 +228,7 @@ export default function CourseTimeline() {
                 <a
                   href="https://conference.vrsj.org/ac2025/program/doc/3C1-11.pdf"
                   target="_blank"
-                  className="underline decoration-dotted underline-offset-4 duration-300"
-                  onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(210, 83, 181, 1)'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = ''}
+                  className={gradientHoverLinkClass}
                 >
                   Rotation Axis Control in Sphere Levitation Using Ultrasonic Phased Array
                 </a>
@@ -266,15 +246,28 @@ export default function CourseTimeline() {
         </div>
       </AnimatedText>
 
+      {/* Internship Section */}
+      <AnimatedText>
+        <div className="mt-8 space-y-2 mx-auto max-w-6xl">
+          <h2 className="text-xl font-bold">Internships</h2>
+          <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
+            ・Oct 2025 - Feb 2026: SAP Japan (Support Engineer, Internship) <br />
+            ・Aug 2025 - Sep 2025: Microsoft Japan (Techinical Support Engineer, Internship)<br />
+            ・Apr 2025 - July 2025: And AI (Flutter Engineer, Internship)<br />
+            ・Mar 2021 - Mar 2022: Starbucks Coffee Japan (Barista, Part time job)
+          </p>
+        </div>
+      </AnimatedText>
+
       {/* Certification Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="text-xl font-bold text-[var(--foreground)] border-l-4 border-[rgba(210,83,181,0.5)] pl-4 py-1">Certifications</h2>
+          <h2 className="text-xl font-bold">Certifications</h2>
           <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
-            ・Sep 2025 - Microsoft Certified: Security, Compliance, and Identity Fundamentals <br />
-            ・Jul 2025 - 基本情報技術者試験 | Fundamental Information Technology Engineer Examination <br />
-            ・Jun 2024 - TOEIC Listening & Reading: 945 <br />
-            ・Nov 2022 - TOEFL iBT: 84
+            ・Sep 2025: Microsoft Certified: Security, Compliance, and Identity Fundamentals <br />
+            ・Jul 2025: Fundamental Information Technology Engineer Examination (基本情報技術者試験) <br />
+            ・Jun 2024: TOEIC Listening & Reading - 945 <br />
+            ・Nov 2022: TOEFL iBT - 84
           </p>
         </div>
       </AnimatedText>

@@ -98,10 +98,13 @@ export default function Navbar() {
                 href={item.href}
                 className={`
                   text-xs sm:text-sm /* 移动端字体大小xs(12px), sm(640px)以上为base(16px) */
-                  font-medium whitespace-nowrap transition-colors
+                  font-medium whitespace-nowrap transition-opacity
+                  bg-clip-text text-transparent
+                  bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600
+                  dark:from-purple-400 dark:via-pink-400 dark:to-purple-400
                   ${activeSection === item.href.slice(1)
-                    ? "text-foreground"
-                    : "text-foreground/60 hover:text-foreground"
+                    ? "opacity-100"
+                    : "opacity-60 hover:opacity-100"
                   }
                 `}
                 onClick={(e) => {
