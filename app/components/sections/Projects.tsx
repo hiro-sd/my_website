@@ -100,14 +100,16 @@ export default function Projects() {
                     cursor-pointer
                   "
                 >
-                  <div className="relative w-full h-48 md:h-72 mb-4">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="rounded-lg object-cover"
-                    />
-                  </div>
+                  {project.image && (
+                    <div className="relative w-full h-48 md:h-72 mb-4">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="rounded-lg object-cover"
+                      />
+                    </div>
+                  )}
 
                   <h2 className="text-2xl font-semibold mb-2">
                     {project.title}

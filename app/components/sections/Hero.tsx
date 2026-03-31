@@ -7,7 +7,7 @@ import { FiInstagram } from "react-icons/fi"
 
 export default function Hero() {
   return (
-    <section id="home" className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <section id="home" className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-body)]">
       <FloatingElements />
       <main className="flex flex-col gap-8 row-start-2 items-center">
         <AnimatedText className="flex flex-col items-center gap-4">
@@ -20,7 +20,7 @@ export default function Hero() {
             priority
           />
           <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400">Hiroto Yoshida</h1>
-          <p className="text-lg text-foreground/80 font-[family-name:var(--font-geist-mono)]">
+          <p className="text-lg text-foreground/80 font-[family-name:var(--font-body)]">
             2002 / 01 / 14 - Born in Chiba, Japan
           </p>
         </AnimatedText>

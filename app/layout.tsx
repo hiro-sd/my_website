@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Noto_Sans_JP, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["600", "700", "800"],
 });
 
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const notoJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500", "700"],
 });
 
 // TODO: Please update the title and description with your personal information
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -37,7 +37,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${jakarta.variable} ${notoJP.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -218,7 +218,10 @@ export default function CourseTimeline() {
       {/* Publications Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="text-xl font-bold">Publications</h2>
+          <h2 className="flex items-center gap-3 text-xl font-bold">
+            <span className="h-6 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
+            Publications
+          </h2>
 
           <div className="space-y-3">
             <div>
@@ -249,7 +252,10 @@ export default function CourseTimeline() {
       {/* Internship Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="text-xl font-bold">Internships</h2>
+          <h2 className="flex items-center gap-3 text-xl font-bold">
+            <span className="h-6 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
+            Internships
+          </h2>
           <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
             ・Oct 2025 - Feb 2026: SAP Japan (Support Engineer, Internship) <br />
             ・Aug 2025 - Sep 2025: Microsoft Japan (Techinical Support Engineer, Internship)<br />
@@ -262,7 +268,10 @@ export default function CourseTimeline() {
       {/* Certification Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="text-xl font-bold">Certifications</h2>
+          <h2 className="flex items-center gap-3 text-xl font-bold">
+            <span className="h-6 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
+            Certifications
+          </h2>
           <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
             ・Sep 2025: Microsoft Certified: Security, Compliance, and Identity Fundamentals <br />
             ・Jul 2025: Fundamental Information Technology Engineer Examination (基本情報技術者試験) <br />
