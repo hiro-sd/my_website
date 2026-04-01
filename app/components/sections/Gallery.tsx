@@ -90,7 +90,7 @@ const photos: Photo[] = [
     location: "Jōdogahama, Iwate",
     description: ""
   },
-  // {
+  // { 一旦コメントアウト
   //   id: 10,
   //   image: "/gallery/20220304.JPG",
   //   date: "2022.03.04",
