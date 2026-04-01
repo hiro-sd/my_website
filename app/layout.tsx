@@ -14,10 +14,9 @@ const notoJP = Noto_Sans_JP({
   weight: ["400", "500", "700"],
 });
 
-// TODO: Please update the title and description with your personal information
 export const metadata: Metadata = {
-  title: "Portfolio Template",
-  description: "A modern portfolio template for developers and designers",
+  title: "Hiroto Yoshida",
+  description: "Hiroto Yoshida's personal website. Master's student at the University of Tokyo, researching acoustic levitation and human-computer interaction.",
 };
 
 export default function RootLayout({
