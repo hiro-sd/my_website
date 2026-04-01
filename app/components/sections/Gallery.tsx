@@ -90,13 +90,13 @@ const photos: Photo[] = [
     location: "Jōdogahama, Iwate",
     description: ""
   },
-  {
-    id: 10,
-    image: "/gallery/20220304.JPG",
-    date: "2022.03.04",
-    location: "Hachimanzaka, Hokkaido",
-    description: ""
-  }
+  // {
+  //   id: 10,
+  //   image: "/gallery/20220304.JPG",
+  //   date: "2022.03.04",
+  //   location: "Hachimanzaka, Hokkaido",
+  //   description: ""
+  // }
 ]
 
 export default function Gallery() {
