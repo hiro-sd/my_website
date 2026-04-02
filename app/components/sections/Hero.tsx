@@ -2,13 +2,13 @@
 
 import Image from "next/image"
 import AnimatedText from "../common/AnimatedText"
-import FloatingElements from "../common/FloatingElements"
+// import FloatingElements from "../common/FloatingElements"
 import { FiInstagram } from "react-icons/fi"
 
 export default function Hero() {
   return (
     <section id="home" className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-body)]">
-      <FloatingElements />
+      {/* <FloatingElements /> */}
       <main className="flex flex-col gap-8 row-start-2 items-center">
         <AnimatedText className="flex flex-col items-center gap-4">
           <Image

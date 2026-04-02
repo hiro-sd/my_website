@@ -3,7 +3,7 @@
 import AnimatedText from '../common/AnimatedText'
 import Image from 'next/image'
 import { Typography, Container, Box, Card, CardContent, Grid } from '@mui/material'
-import GradientBackground from '../common/GradientBackground'
+// import GradientBackground from '../common/GradientBackground'
 
 // Define photo data type
 // Each photo must include:
@@ -113,13 +113,13 @@ export default function Gallery() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        <GradientBackground
+        {/* {/* <GradientBackground
           sectionId="gallery"
           gradientColors={{
             start: '#60A5FA',  // Light blue
             end: '#3B82F6'     // Deep blue
           }}
-        />
+        /> */}
 
         <AnimatedText>
           <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">Gallery</h1>

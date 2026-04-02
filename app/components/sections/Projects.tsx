@@ -2,7 +2,7 @@
 
 import AnimatedText from '../common/AnimatedText'
 import Image from 'next/image'
-import GradientBackground from '../common/GradientBackground'
+// import GradientBackground from '../common/GradientBackground'
 // import ExperienceModal from './Motal'
 // import { useState } from 'react'
 
@@ -68,13 +68,13 @@ export default function Projects() {
         relative
         overflow-hidden
       ">
-        <GradientBackground
+        {/* {/* <GradientBackground
           sectionId="projects"
           gradientColors={{
             start: '#F43F5E',  // Light rose
             end: '#BE123C'     // Deep rose
           }}
-        />
+        /> */}
 
         <AnimatedText>
           <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">

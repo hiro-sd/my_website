@@ -11,6 +11,7 @@ import Experience from './components/sections/Experience'
 import { Box } from '@mui/material'
 import Projects from './components/sections/Projects'
 import Gallery from './components/sections/Gallery'
+import DataBackground from "./components/common/DataBackground"
 
 // Step 2: Choose your template version
 // For Researcher Template: uncomment these imports
@@ -23,6 +24,10 @@ import Gallery from './components/sections/Gallery'
 export default function Home() {
   return (
     <>
+      <div className="fixed inset-0 -z-10 bg-radial-gradient from-transparent to-black">
+        <DataBackground />
+      </div>
+
       {/* Navigation bar - Edit items in /components/common/Navbar.tsx */}
       <Navbar />
       <main>
