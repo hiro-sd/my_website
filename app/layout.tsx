@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes"
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ const notoJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: "Hiroto Yoshida",
-  description: "Hiroto Yoshida's personal website. Master's student at the University of Tokyo, researching acoustic levitation and human-computer interaction.",
+  description: "Hiroto Yoshida's personal website.",
 };
 
 export default function RootLayout({
@@ -25,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -37,7 +38,9 @@ export default function RootLayout({
         }} />
       </head>
       <body className={`${jakarta.variable} ${notoJP.variable} antialiased`}>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

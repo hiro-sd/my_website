@@ -90,13 +90,13 @@ const photos: Photo[] = [
     location: "Jōdogahama, Iwate",
     description: ""
   },
-  // { 一旦コメントアウト
-  //   id: 10,
-  //   image: "/gallery/20220304.JPG",
-  //   date: "2022.03.04",
-  //   location: "Hachimanzaka, Hokkaido",
-  //   description: ""
-  // }
+  {
+    id: 10,
+    image: "/gallery/20220304.JPG",
+    date: "2022.03.04",
+    location: "Hachimanzaka, Hokkaido",
+    description: ""
+  }
 ]
 
 export default function Gallery() {
@@ -113,13 +113,6 @@ export default function Gallery() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* {/* <GradientBackground
-          sectionId="gallery"
-          gradientColors={{
-            start: '#60A5FA',  // Light blue
-            end: '#3B82F6'     // Deep blue
-          }}
-        /> */}
 
         <AnimatedText>
           <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">Gallery</h1>
