@@ -2,7 +2,7 @@
 
 import AnimatedText from '../common/AnimatedText'
 import Image from 'next/image'
-import GradientBackground from '../common/GradientBackground'
+// import GradientBackground from '../common/GradientBackground'
 import ExperienceModal from './Motal'
 import { useState } from 'react'
 
@@ -35,7 +35,7 @@ const experiences: Experience[] = [
     description: "This is a sample work description detailing your main responsibilities and achievements in this role."
   },
   {
-    id: 2, 
+    id: 2,
     title: "Example Position 2",
     company: "Example Company 2",
     period: "June 2023 - December 2023",
@@ -65,13 +65,13 @@ export default function Experience() {
           Green theme: start:'#10B981' end:'#047857'
           Pink theme: start:'#EC4899' end:'#BE185D'
         */}
-        <GradientBackground 
+        {/* {/* <GradientBackground 
           sectionId="experience"
           gradientColors={{
             start: '#7C3AED',  // Light violet
             end: '#5B21B6'     // Deep violet
           }}
-        />
+        /> */}
 
         <AnimatedText>
           <h1 className="text-3xl sm:text-4xl font-bold mb-12 text-center relative z-10">
@@ -83,7 +83,7 @@ export default function Experience() {
           {experiences.map((experience) => (
             <div key={experience.id}>
               <AnimatedText>
-                <div 
+                <div
                   onClick={() => {
                     setSelectedExperience(experience.id)
                     setModalOpen(true)
@@ -110,7 +110,7 @@ export default function Experience() {
                         className="object-cover"
                       />
                     </div>
-                    
+
                     <div className="flex-1">
                       <h3 className="
                         text-base sm:text-lg md:text-xl  /* Mobile: 16px, sm:18px, md:20px */
@@ -119,7 +119,7 @@ export default function Experience() {
                       ">
                         {experience.title}
                       </h3>
-                      
+
                       <p className="text-base text-gray-600 dark:text-gray-400">
                         {experience.company}
                       </p>
@@ -129,11 +129,11 @@ export default function Experience() {
                   <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
                     {experience.period}
                   </p>
-                  
+
                   <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
                     {experience.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {experience.skills.map((skill) => (
                       <span
