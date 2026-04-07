@@ -29,7 +29,9 @@ export default function About() { // TODO: Edit this section.
           <div className="space-y-4 text-center">
             <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-8">About Me</h1>
             <p className="mx-auto max-w-3xl text-foreground/70 leading-relaxed">
-              I was born in Funabashi in 2002. I majored in Fisheries Science at Hokkaido University, but switched to the field of information technology when I entered the master’s program at the University of Tokyo. I was also fortunate to have the opportunity to study abroad, which allowed me to broaden my horizons and gain valuable experience.
+              I was born in Funabashi in 2002. As an undergraduate, I majored in Fisheries Science at Hokkaido University. I was also fortunate to have the opportunity to study abroad in the United States, which broadened my horizons and provided me with valuable experience. While in the U.S., I traveled solo through Central and South America, which remains a highlight of my life.
+              <br />
+              When I entered graduate school at the University of Tokyo, I switched my focus to the field of information technology. Currently, I am working to expand the application of physical phenomena using ultrasound with the goal of realizing new user interfaces.
             </p>
           </div>
         </AnimatedText>
