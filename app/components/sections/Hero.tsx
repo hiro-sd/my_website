@@ -21,7 +21,7 @@ export default function Hero() {
           />
           <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400">Hiroto Yoshida</h1>
           <p className="text-lg text-foreground/80 font-[family-name:var(--font-body)]">
-            2002 / 01 / 14 - Born in Chiba, Japan
+
           </p>
         </AnimatedText>
 
