@@ -258,7 +258,7 @@ export default function CourseTimeline() {
           </h2>
           <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
             ・Oct 2025 - Feb 2026: SAP Japan (Support Engineer, Internship) <br />
-            ・Aug 2025 - Sep 2025: Microsoft Japan (Techinical Support Engineer, Internship)<br />
+            ・Aug 2025 - Sep 2025: Microsoft Japan (Technical Support Engineer, Internship)<br />
             ・Apr 2025 - July 2025: And AI Co., Ltd. (Flutter Engineer, Internship)<br />
             ・Mar 2021 - Mar 2022: Starbucks Coffee Japan (Barista, Part time job)
           </p>

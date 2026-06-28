@@ -80,7 +80,7 @@ const photos: Photo[] = [
     id: 8,
     image: "/gallery/20231222.JPG",
     date: "2023.12.22",
-    location: "Tronto University, Toronto",
+    location: "University of Toronto, Toronto",
     description: ""
   },
   {
