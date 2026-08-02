@@ -127,6 +127,7 @@ export default function Gallery() {
                   sx={{
                     height: { xs: 280, sm: 340, md: 380 },
                     display: 'flex',
+                    color: 'var(--foreground)',
                     background: theme => theme.palette.mode === 'dark'
                       ? 'rgba(0, 0, 0, 0.2)'
                       : 'rgba(255, 255, 255, 0.1)',
