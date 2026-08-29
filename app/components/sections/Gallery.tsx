@@ -44,63 +44,63 @@ const photos: Photo[] = [
     image: "/gallery/20251119.webp",
     date: "2025.11.19",
     location: "Ninenzaka, Kyoto",
-    description: "An evening walk through Kyoto's historic Ninenzaka street."
+    description: "Despite being such a famous spot, this was my first visit to Ninenzaka. It was bustling with visitors from around the world, and the atmosphere was incredible!"
   },
   {
     id: 2,
     image: "/gallery/20240507.webp",
     date: "2024.05.07",
     location: "San Diego State University, California",
-    description: "A palm-lined view across the San Diego State campus."
+    description: "San Diego State University, where I studied abroad. I loved this campus and came here every day."
   },
   {
     id: 3,
     image: "/gallery/20240429.webp",
     date: "2024.04.29",
     location: "La Jolla Cove, California",
-    description: "Clear Pacific water along the coast at La Jolla Cove."
+    description: "I first saw La Jolla in my junior high school English textbook. This beautiful beach town on San Diego's coast truly shows why the city is called 'America's Finest City.'"
   },
   {
     id: 4,
     image: "/gallery/20240405.webp",
     date: "2024.04.05",
     location: "UNAM Central Library, Mexico City",
-    description: "The mural-covered Central Library on the UNAM campus."
+    description: "The Central Library at UNAM, known for its striking mosaic murals inspired by Mexico's pre-Hispanic past. The university campus is also a UNESCO World Heritage Site."
   },
   {
     id: 5,
     image: "/gallery/20240114.webp",
     date: "2024.01.14",
     location: "Salar de Uyuni, Bolivia",
-    description: "A star-filled night reflected across the Uyuni salt flats."
+    description: "Salar de Uyuni on a clear new-moon night. So far, this is the best place I have ever visited."
   },
   {
     id: 6,
     image: "/gallery/20240103.webp",
     date: "2024.01.03",
     location: "Plaza de Bolívar, Bogota",
-    description: "A lively afternoon in Bogota's historic central square."
+    description: "A famous square in Bogota, Colombia, with an incredible number of pigeons."
   },
   {
     id: 7,
     image: "/gallery/20231223.webp",
     date: "2023.12.23",
     location: "Manhattan Bridge, New York",
-    description: "A winter view of the Manhattan Bridge from Dumbo."
+    description: "A shot from New York. The Manhattan Bridge looks especially beautiful from Dumbo."
   },
   {
     id: 8,
     image: "/gallery/20231222.webp",
     date: "2023.12.22",
     location: "University of Toronto, Toronto",
-    description: "A quiet winter walk across the University of Toronto campus."
+    description: "The University of Toronto in winter: a quiet, historic campus where I even spotted a squirrel."
   },
   {
     id: 9,
     image: "/gallery/20230730.webp",
     date: "2023.07.30",
     location: "Jōdogahama, Iwate",
-    description: "Clear blue water framed by Jodogahama's rocky coast."
+    description: "Jodogahama in summer is one of my absolute favorite places in Japan."
   },
 ]
 
