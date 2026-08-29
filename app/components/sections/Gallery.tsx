@@ -41,74 +41,67 @@ type Photo = {
 const photos: Photo[] = [
   {
     id: 1,
-    image: "/gallery/20251119.JPG",
+    image: "/gallery/20251119.webp",
     date: "2025.11.19",
     location: "Ninenzaka, Kyoto",
     description: "An evening walk through Kyoto's historic Ninenzaka street."
   },
   {
     id: 2,
-    image: "/gallery/20240507.JPG",
+    image: "/gallery/20240507.webp",
     date: "2024.05.07",
     location: "San Diego State University, California",
     description: "A palm-lined view across the San Diego State campus."
   },
   {
     id: 3,
-    image: "/gallery/20240429.JPG",
+    image: "/gallery/20240429.webp",
     date: "2024.04.29",
     location: "La Jolla Cove, California",
     description: "Clear Pacific water along the coast at La Jolla Cove."
   },
   {
     id: 4,
-    image: "/gallery/20240405.JPG",
+    image: "/gallery/20240405.webp",
     date: "2024.04.05",
     location: "UNAM Central Library, Mexico City",
     description: "The mural-covered Central Library on the UNAM campus."
   },
   {
     id: 5,
-    image: "/gallery/20240114.JPG",
+    image: "/gallery/20240114.webp",
     date: "2024.01.14",
     location: "Salar de Uyuni, Bolivia",
     description: "A star-filled night reflected across the Uyuni salt flats."
   },
   {
     id: 6,
-    image: "/gallery/20240103.JPG",
+    image: "/gallery/20240103.webp",
     date: "2024.01.03",
     location: "Plaza de Bolívar, Bogota",
     description: "A lively afternoon in Bogota's historic central square."
   },
   {
     id: 7,
-    image: "/gallery/20231223.JPG",
+    image: "/gallery/20231223.webp",
     date: "2023.12.23",
     location: "Manhattan Bridge, New York",
     description: "A winter view of the Manhattan Bridge from Dumbo."
   },
   {
     id: 8,
-    image: "/gallery/20231222.JPG",
+    image: "/gallery/20231222.webp",
     date: "2023.12.22",
     location: "University of Toronto, Toronto",
     description: "A quiet winter walk across the University of Toronto campus."
   },
   {
     id: 9,
-    image: "/gallery/20230730.JPG",
+    image: "/gallery/20230730.webp",
     date: "2023.07.30",
     location: "Jōdogahama, Iwate",
     description: "Clear blue water framed by Jodogahama's rocky coast."
   },
-  // {
-  //   id: 10,
-  //   image: "/gallery/20220304.JPG",
-  //   date: "2022.03.04",
-  //   location: "Hachimanzaka, Hokkaido",
-  //   description: ""
-  // }
 ]
 
 export default function Gallery() {
@@ -279,7 +272,7 @@ export default function Gallery() {
                 src={selectedPhoto.image}
                 alt={selectedPhoto.description}
                 fill
-                sizes="(max-width: 600px) 100vw, 90vw"
+                sizes="(max-width: 600px) 40vh, 50vh"
                 className="object-contain object-center"
               />
             </Box>
