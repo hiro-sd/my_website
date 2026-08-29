@@ -51,7 +51,7 @@ export default function Home() {
             alignItems: 'center',
             p: 4,
           }}>
-            <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">Backgrounds</h1>
+            <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">Background</h1>
             <CourseTimeline />
           </Box>
         </section>

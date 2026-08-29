@@ -21,7 +21,7 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   // { name: "Skills", href: "#skills"},
-  { name: "Backgrounds", href: "#backgrounds" },
+  { name: "Background", href: "#backgrounds" },
   // { name: "Experience", href: "#experience" },
   { name: "Gallery", href: "#gallery" },
 ]
@@ -67,7 +67,7 @@ export default function Navbar() {
     const target = document.querySelector(href) as HTMLElement
 
     if (target) {
-      const targetPosition = target.offsetTop - NAVBAR_HEIGHT
+      const targetPosition = target.offsetTop - NAVBAR_HEIGHT - 12
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'

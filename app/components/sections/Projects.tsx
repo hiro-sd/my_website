@@ -43,15 +43,6 @@ const projects: Project[] = [
     image: "/system.jpg", // Screenshot path
     skills: ["Python", "OpenCV", "AUTD3"], // Tech stack
     link: "" // Project link
-  },
-  {
-    id: 2,
-    title: "Upcoming...",
-    description: "", // Placeholder description
-    period: "",
-    image: "",
-    skills: [],
-    link: ""
   }
 ];
 
@@ -158,4 +149,4 @@ export default function Projects() {
       /> */}
     </section>
   )
-} 
+}
