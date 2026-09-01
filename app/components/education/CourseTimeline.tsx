@@ -218,7 +218,7 @@ export default function CourseTimeline() {
       {/* Publications Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="flex items-center gap-3 text-xl font-bold">
+          <h2 className="font-display-outline flex items-center gap-3 text-xl">
             <span className="h-6 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
             Publications
           </h2>
@@ -256,7 +256,7 @@ export default function CourseTimeline() {
       {/* Internship Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="flex items-center gap-3 text-xl font-bold">
+          <h2 className="font-display-outline flex items-center gap-3 text-xl">
             <span className="h-6 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
             Internships
           </h2>
@@ -272,7 +272,7 @@ export default function CourseTimeline() {
       {/* Certification Section */}
       <AnimatedText>
         <div className="mt-8 space-y-2 mx-auto max-w-6xl">
-          <h2 className="flex items-center gap-3 text-xl font-bold">
+          <h2 className="font-display-outline flex items-center gap-3 text-xl">
             <span className="h-6 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
             Certifications
           </h2>

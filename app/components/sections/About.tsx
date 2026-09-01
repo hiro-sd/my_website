@@ -27,7 +27,7 @@ export default function About() { // TODO: Edit this section.
       <div className="w-full max-w-6xl space-y-12">
         <AnimatedText>
           <div className="space-y-4 text-center">
-            <h1 className="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-8">About Me</h1>
+            <h1 className="font-display-outline inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-8">About Me</h1>
             <p className="mx-auto max-w-3xl text-foreground/70 leading-relaxed">
               I was born in Chiba, Japan in 2002.
               <br />
@@ -42,7 +42,7 @@ export default function About() { // TODO: Edit this section.
           <div className="space-y-8 lg:col-span-3">
             <AnimatedText>
               <div className="space-y-4">
-                <h2 className="flex items-center gap-3 text-2xl font-semibold">
+                <h2 className="font-display-outline flex items-center gap-3 text-xl sm:text-2xl">
                   <span className="h-7 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
                   Personal Interests
                 </h2>
@@ -54,7 +54,7 @@ export default function About() { // TODO: Edit this section.
 
             <AnimatedText>
               <div className="space-y-4">
-                <h2 className="flex items-center gap-3 text-2xl font-semibold">
+                <h2 className="font-display-outline flex items-center gap-3 text-xl sm:text-2xl">
                   <span className="h-7 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
                   Research Field
                 </h2>

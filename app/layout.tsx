@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Plus_Jakarta_Sans } from "next/font/google";
+import { Bungee_Outline, Noto_Sans_JP, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes"
 
@@ -13,6 +13,12 @@ const notoJP = Noto_Sans_JP({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "700"],
+});
+
+const bungeeOutline = Bungee_Outline({
+  subsets: ["latin"],
+  variable: "--font-display-outline",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -77,7 +83,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body className={`${jakarta.variable} ${notoJP.variable} antialiased`}>
+      <body className={`${jakarta.variable} ${notoJP.variable} ${bungeeOutline.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
