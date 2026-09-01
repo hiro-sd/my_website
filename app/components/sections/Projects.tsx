@@ -41,11 +41,11 @@ const pendingDetail = 'Details will be added soon.'
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Stabilization of Acoustically Levitated Sphere',
-    summary: 'A before-and-after demonstration of feedback stabilization for an acoustically levitated sphere.',
+    title: 'Vision-Based Feedback Stabilization of an Acoustically Levitated Sphere',
+    summary: 'A vision-based feedback control system that tracks an acoustically levitated sphere in real time and dynamically adjusts the ultrasonic field to reduce positional fluctuations and improve levitation stability.',
     period: '2025.10 - 2026.05',
     video: '/project/PID_off_to_on.mp4',
-    skills: ['Python', 'OpenCV', 'AUTD3'],
+    skills: ['Python', 'OpenCV', 'AUTD3/pyautd3', 'PID Feedback Control'],
     problem: pendingDetail,
     roles: [],
     currentResult: pendingDetail,
@@ -53,11 +53,11 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Acoustic Handoff',
-    summary: 'A demonstration of handing off a levitated sphere between acoustic manipulation states.',
+    title: 'Acoustic Handoff and Recovery of an Acoustically Levitated Sphere',
+    summary: 'A state-machine-based recovery system that detects a falling sphere, predicts its motion, hands control from steady levitation to a tracking-and-braking acoustic field, and recaptures it for stabilized levitation.',
     period: '2026.06 - current',
     video: '/project/acoustic_handoff.mp4',
-    skills: ['Python', 'OpenCV', 'AUTD3'],
+    skills: ['Python', 'OpenCV', 'AUTD3/pyautd3', 'Stereo Vision', 'Predictive Control', 'State Machine Control'],
     problem: pendingDetail,
     roles: [],
     currentResult: pendingDetail,
@@ -287,7 +287,7 @@ export default function Projects() {
 
               <Box sx={{ mt: 4, pt: 2, borderTop: '1px solid rgba(128, 128, 128, 0.3)' }}>
                 <Typography variant="h6" sx={{ fontWeight: 600, fontSize: '1rem' }}>
-                  Technologies
+                  Technologies & Methods
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1.5 }}>
                   {selectedProject.skills.map(skill => (
