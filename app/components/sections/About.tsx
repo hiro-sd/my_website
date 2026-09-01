@@ -42,7 +42,7 @@ export default function About() { // TODO: Edit this section.
           <div className="space-y-8 lg:col-span-3">
             <AnimatedText>
               <div className="space-y-4">
-                <h2 className="font-display-outline flex items-center gap-3 text-xl sm:text-2xl">
+                <h2 className="font-display-space flex items-center gap-3 text-xl font-semibold sm:text-2xl">
                   <span className="h-7 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
                   Personal Interests
                 </h2>
@@ -54,7 +54,7 @@ export default function About() { // TODO: Edit this section.
 
             <AnimatedText>
               <div className="space-y-4">
-                <h2 className="font-display-outline flex items-center gap-3 text-xl sm:text-2xl">
+                <h2 className="font-display-space flex items-center gap-3 text-xl font-semibold sm:text-2xl">
                   <span className="h-7 w-[4px] rounded-full bg-gradient-to-b from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400" aria-hidden="true" />
                   Research Field
                 </h2>

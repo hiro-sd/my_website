@@ -44,6 +44,11 @@ h6 {
   filter: drop-shadow(0 0 0.5px rgb(232 121 249 / 0.45));
 }
 
+.font-display-space {
+  font-family: var(--font-display-space), sans-serif;
+  letter-spacing: 0;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

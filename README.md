@@ -1,4 +1,4 @@
-# Hiroto Yoshida - Personal Portfolio
+# Personal Portfolio
 
 Personal portfolio website for Hiroto Yoshida, a master's student at the University of Tokyo researching acoustic levitation, human-computer interaction, and user interfaces.
 

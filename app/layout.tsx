@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bungee_Outline, Noto_Sans_JP, Plus_Jakarta_Sans } from "next/font/google";
+import { Bungee_Outline, Noto_Sans_JP, Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes"
 
@@ -19,6 +19,12 @@ const bungeeOutline = Bungee_Outline({
   subsets: ["latin"],
   variable: "--font-display-outline",
   weight: "400",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display-space",
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -83,7 +89,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body className={`${jakarta.variable} ${notoJP.variable} ${bungeeOutline.variable} antialiased`}>
+      <body className={`${jakarta.variable} ${notoJP.variable} ${bungeeOutline.variable} ${spaceGrotesk.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
