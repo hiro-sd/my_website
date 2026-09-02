@@ -22,12 +22,12 @@ export default function Hero() {
           <Image
             className="h-auto w-full max-w-[500px] rounded-full"
             src="/20250323.JPG" // Replace with your avatar image path in public folder
-            alt="Hiroto Yoshida / 吉田寛人"
+            alt="Hiroto Yoshida"
             width={500}
             height={281}
             priority
           />
-          <h1 className="font-display-outline inline-block text-center text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400">Hiroto Yoshida / 吉田寛人</h1>
+          <h1 className="font-display-outline inline-block text-center text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400">Hiroto Yoshida</h1>
           <p className="text-lg text-foreground/80 font-[family-name:var(--font-body)]">
 
           </p>
