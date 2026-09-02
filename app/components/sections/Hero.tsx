@@ -22,12 +22,12 @@ export default function Hero() {
           <Image
             className="h-auto w-full max-w-[500px] rounded-full"
             src="/20250323.JPG" // Replace with your avatar image path in public folder
-            alt="Hiroto Yoshida"
+            alt="Hiroto Yoshida / 吉田寛人"
             width={500}
             height={281}
             priority
           />
-          <h1 className="font-display-outline inline-block text-center text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400">Hiroto Yoshida</h1>
+          <h1 className="font-display-outline inline-block text-center text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400">Hiroto Yoshida / 吉田寛人</h1>
           <p className="text-lg text-foreground/80 font-[family-name:var(--font-body)]">
 
           </p>
@@ -37,7 +37,7 @@ export default function Hero() {
           className="w-full max-w-2xl text-center"
         >
           <p className="text-foreground/80 leading-relaxed">
-            I'm a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">Shinoda / Makino Laboratory</a>
+            I'm a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">Shinoda & Makino Laboratory</a>
             , <a href="https://www.k.u-tokyo.ac.jp/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">GSFS</a>, UTokyo.<br />
             My research interests include Acoustic Levitation, Human-Computer Interaction, and User Interfaces.<br />
           </p>
