@@ -39,7 +39,7 @@ export default function Hero() {
           <p className="text-foreground/80 leading-relaxed">
             I'm a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">Shinoda & Makino Laboratory</a>
             , <a href="https://www.k.u-tokyo.ac.jp/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">GSFS</a>, UTokyo.<br />
-            My research interests include Acoustic Levitation, Human-Computer Interaction, and User Interfaces.<br />
+            My research interests include acoustic levitation, human-computer interaction, and user interfaces.<br />
           </p>
         </AnimatedText>
 
