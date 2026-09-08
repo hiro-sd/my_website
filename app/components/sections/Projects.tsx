@@ -44,7 +44,7 @@ const projects: Project[] = [
     title: 'Vision-Based Feedback Stabilization of an Acoustically Levitated Sphere',
     summary: 'A vision-based feedback control system that tracks an acoustically levitated sphere in real time and dynamically adjusts the ultrasonic field to reduce positional fluctuations and improve levitation stability.',
     period: '2025.10 - 2026.05',
-    video: '/project/PID_off_to_on.mp4',
+    video: '/project/feedback.mp4',
     skills: ['Python', 'OpenCV', 'AUTD3/pyautd3', 'PID Feedback Control'],
     problem: pendingDetail,
     roles: [],
