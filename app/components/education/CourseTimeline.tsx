@@ -33,7 +33,7 @@ const courses: CourseItem[] = [
         </a>
         {' | '}
         <a
-          href="https://www2.fish.hokudai.ac.jp/faculty-member/kishimura-hideki/"
+          href="https://repun-app.fish.hokudai.ac.jp/course/view.php?id=2098"
           target="_blank"
           className={gradientHoverLinkClass}
         >
@@ -65,7 +65,7 @@ const courses: CourseItem[] = [
           target="_blank"
           className={gradientHoverLinkClass}
         >
-          Shinoda / Makino Laboratory
+          Shinoda & Makino Laboratory
         </a>
       </>
     )
