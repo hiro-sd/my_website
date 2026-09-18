@@ -227,7 +227,7 @@ export default function CourseTimeline() {
             <div>
               <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2 underline decoration-1 underline-offset-4 decoration-[var(--foreground)]/30">Conference Paper</h3>
               <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
-                ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array&quot; SICE FESTIVAL 2026 WITH ANNUAL CONFERENCE, 2026, pp. WeAT1-01.9, Sep.14-17, Yokohama.
+                ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;<strong className="font-semibold">Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array</strong>&quot; SICE Festival 2026 with Annual Conference, 2026, pp. 714-719, Sep.14-17, Yokohama, Japan.
               </p>
 
               <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
@@ -237,16 +237,16 @@ export default function CourseTimeline() {
                   target="_blank"
                   className={gradientHoverLinkClass}
                 >
-                  Rotation Axis Control in Sphere Levitation Using Ultrasonic Phased Array
+                  <strong className="font-semibold">Rotation Axis Control in Sphere Levitation Using Ultrasonic Phased Array</strong>
                 </a>
-                &quot; The 30th Annual Conference of the Virtual Reality Society of Japan, 2025, pp. 3C1-11, Sep.17-19, Osaka.
+                &quot; The 30th Annual Conference of the Virtual Reality Society of Japan, 2025, pp. 3C1-11, Sep.17-19, Osaka, Japan.
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2 underline decoration-1 underline-offset-4 decoration-[var(--foreground)]/30">Thesis</h3>
               <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
-                ・Hiroto Yoshida, Yuya Kumagai, Hideki Kishimura. &quot;A Study on the Extraction and Purification of Fucoidan Derived from Saccharina japonica and Its Structure and Antioxidant Activity Under Different Conditions&quot; Bachelor&apos;s Thesis, Hokkaido University. February 2025.
+                ・Hiroto Yoshida, Yuya Kumagai, Hideki Kishimura. &quot;<strong className="font-semibold">A Study on the Extraction and Purification of Fucoidan Derived from Saccharina japonica and Its Structure and Antioxidant Activity Under Different Conditions</strong>&quot; Bachelor&apos;s Thesis, Hokkaido University. February 2025.
               </p>
             </div>
           </div>
