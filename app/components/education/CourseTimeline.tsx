@@ -227,7 +227,7 @@ export default function CourseTimeline() {
             <div>
               <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2 underline decoration-1 underline-offset-4 decoration-[var(--foreground)]/30">Conference Paper</h3>
               <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
-                ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array&quot; SICE FES 2026 WITH ANNUAL CONFERENCE, 2026, pp. WeAT1-01.9, Sep.14-17, Yokohama.
+                ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array&quot; SICE FESTIVAL 2026 WITH ANNUAL CONFERENCE, 2026, pp. WeAT1-01.9, Sep.14-17, Yokohama.
               </p>
 
               <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
