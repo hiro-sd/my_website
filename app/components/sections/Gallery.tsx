@@ -40,6 +40,27 @@ type Photo = {
 // 4. Recommended to sort photos in reverse chronological order
 const photos: Photo[] = [
   {
+    id: 10,
+    image: "/gallery/20261002.webp",
+    date: "2026.10.02",
+    location: "Cathedral of Santa Maria del Fiore, Florence",
+    description: "Florence is a city where every street looks like a work of art."
+  },
+  {
+    id: 11,
+    image: "/gallery/20260929.webp",
+    date: "2026.09.29",
+    location: "St. Peter’s Basilica, Vatican City",
+    description: "I took this shot, captivated by the Swiss Guards standing watch over Vatican City."
+  },
+  {
+    id: 12,
+    image: "/gallery/20260520.webp",
+    date: "2026.05.20",
+    location: "Trocadéro Gardens, Paris",
+    description: "I took a walk through the Trocadéro Gardens on a clear day, with a beautiful view of the Eiffel Tower."
+  },
+  {
     id: 1,
     image: "/gallery/20251119.webp",
     date: "2025.11.19",
