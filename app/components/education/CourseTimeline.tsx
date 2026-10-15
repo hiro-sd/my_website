@@ -227,6 +227,9 @@ export default function CourseTimeline() {
             <div>
               <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2 underline decoration-1 underline-offset-4 decoration-[var(--foreground)]/30">Conference Paper</h3>
               <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
+                ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;<strong className="font-semibold">Feedback Control for Capturing a Sphere in Free Fall Using an Ultrasonic Phased Array</strong>&quot; SICE SI 2026, 2026, Dec.8-10, Osaka, Japan.
+              </p>
+              <p className="text-base text-foreground/80 leading-normal text-[var(--foreground)]/80">
                 ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;<strong className="font-semibold">Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array</strong>&quot; SICE Festival 2026 with Annual Conference, 2026, pp. 714-719, Sep.14-17, Yokohama, Japan.
               </p>
 
