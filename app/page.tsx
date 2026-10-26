@@ -7,7 +7,6 @@ import About from "./components/sections/About"
 import CourseTimeline from "./components/education/CourseTimeline"
 import Navbar from "./components/common/Navbar"
 import MySkills from './components/sections/MySkills'
-import Experience from './components/sections/Experience'
 import { Box } from '@mui/material'
 import Projects from './components/sections/Projects'
 import Gallery from './components/sections/Gallery'
@@ -55,9 +54,6 @@ export default function Home() {
             <CourseTimeline />
           </Box>
         </section>
-
-        {/* Experience section - Add your work history in /components/sections/Experience */}
-        {/* <Experience /> */}
 
         {/* Gallery section - Add your photos in /components/sections/Gallery */}
         <Gallery />

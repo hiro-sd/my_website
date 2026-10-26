@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import AnimatedText from '../common/AnimatedText'
+import { projects, type Project } from '../../data/projects'
 import {
   Box,
   Card,
@@ -18,52 +19,6 @@ import {
   type Theme,
 } from '@mui/material'
 import { FiExternalLink, FiX } from 'react-icons/fi'
-
-type Project = {
-  id: number
-  title: string
-  summary: string
-  period: string
-  video: string
-  skills: string[]
-  problem: string
-  roles: string[]
-  currentResult: string
-  nextStep: string
-  paper?: {
-    label: string
-    url: string
-  }
-}
-
-const pendingDetail = 'Details will be added soon.'
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Vision-Based Feedback Stabilization of an Acoustically Levitated Sphere',
-    summary: 'A vision-based feedback control system that tracks an acoustically levitated sphere in real time and dynamically adjusts the ultrasonic field to reduce positional fluctuations and improve levitation stability.',
-    period: '2025.10 - 2026.05',
-    video: '/project/feedback.mp4',
-    skills: ['Python', 'OpenCV', 'AUTD3/pyautd3', 'PID Feedback Control'],
-    problem: pendingDetail,
-    roles: [],
-    currentResult: pendingDetail,
-    nextStep: pendingDetail,
-  },
-  {
-    id: 2,
-    title: 'Acoustic Handoff and Recovery of an Acoustically Levitated Sphere',
-    summary: 'A state-machine-based recovery system that detects a falling sphere, predicts its motion, hands control from steady levitation to a tracking-and-braking acoustic field, and recaptures it for stabilized levitation.',
-    period: '2026.06 - current',
-    video: '/project/acoustic_handoff.mp4',
-    skills: ['Python', 'OpenCV', 'AUTD3/pyautd3', 'Stereo Vision', 'Predictive Control', 'State Machine Control'],
-    problem: pendingDetail,
-    roles: [],
-    currentResult: pendingDetail,
-    nextStep: pendingDetail,
-  },
-]
 
 const projectCardSx: SxProps<Theme> = {
   height: { xs: 500, sm: 520, md: 540 },
@@ -186,7 +141,7 @@ export default function Projects() {
                           WebkitBoxOrient: 'vertical',
                           overflow: 'hidden',
                         }}>
-                          {project.summary}
+                          {project.overview}
                         </Typography>
                       </CardContent>
                     </CardActionArea>
@@ -263,7 +218,7 @@ export default function Projects() {
                 {selectedProject.period}
               </Typography>
               <Typography id="project-detail-summary" variant="body1" sx={{ mt: 2, opacity: 0.85 }}>
-                {selectedProject.summary}
+                {selectedProject.overview}
               </Typography>
 
               <Box sx={{
