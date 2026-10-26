@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import AnimatedText from '../common/AnimatedText'
 import { projects, type Project } from '../../data/projects'
 import {
@@ -21,7 +22,7 @@ import {
 import { FiExternalLink, FiX } from 'react-icons/fi'
 
 const projectCardSx: SxProps<Theme> = {
-  height: { xs: 500, sm: 520, md: 540 },
+  height: '100%',
   display: 'flex',
   color: 'var(--foreground)',
   background: theme => theme.palette.mode === 'dark'
@@ -83,8 +84,8 @@ export default function Projects() {
 
           <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} sx={{ position: 'relative', zIndex: 1, maxWidth: 'lg' }}>
             {projects.map(project => (
-              <Grid item xs={12} md={6} key={project.id}>
-                <AnimatedText>
+              <Grid item xs={12} md={6} key={project.id} sx={{ display: 'flex' }}>
+                <AnimatedText className="h-full w-full">
                   <Card elevation={0} sx={projectCardSx}>
                     <CardActionArea
                       onClick={() => setSelectedProject(project)}
@@ -110,39 +111,49 @@ export default function Projects() {
                           mb: { xs: 2, md: 2.5 },
                           position: 'relative',
                           width: '100%',
-                          height: { xs: 280, sm: 300, md: 320 },
+                          aspectRatio: '16 / 9',
                           overflow: 'hidden',
                           borderRadius: 2,
                           backgroundColor: '#050505',
                         }}>
-                          <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            preload="metadata"
-                            aria-hidden="true"
-                            className="h-full w-full object-contain"
-                          >
-                            <source src={project.video} type="video/mp4" />
-                          </video>
+                          <Image
+                            src={project.coverImage}
+                            alt={project.tagline}
+                            fill
+                            sizes="(max-width: 900px) 100vw, 50vw"
+                            className="object-cover object-center"
+                          />
                         </Box>
 
                         <Typography variant="h6" sx={{ fontWeight: 600, lineHeight: 1.25, mb: 1 }}>
-                          {project.title}
+                          {project.tagline}
                         </Typography>
-                        <Typography variant="body2" sx={{ opacity: 0.65, mb: 1.5 }}>
+                        <Typography variant="body2" sx={{ opacity: 0.8, lineHeight: 1.5, mb: 0.75 }}>
+                          {project.cardDescription}
+                        </Typography>
+                        <Typography variant="body2" sx={{ opacity: 0.6, mb: 1.5 }}>
                           {project.period}
                         </Typography>
-                        <Typography variant="body2" sx={{
-                          opacity: 0.8,
-                          display: '-webkit-box',
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: 'vertical',
-                          overflow: 'hidden',
-                        }}>
-                          {project.overview}
-                        </Typography>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, mt: 'auto' }}>
+                          {project.skills.map(skill => (
+                            <Chip
+                              key={skill}
+                              label={skill}
+                              size="small"
+                              variant="outlined"
+                              sx={{
+                                color: 'var(--foreground)',
+                                borderColor: 'rgba(128, 128, 128, 0.45)',
+                                backgroundColor: 'rgba(128, 128, 128, 0.08)',
+                                '& .MuiChip-label': {
+                                  px: 1,
+                                  color: 'inherit',
+                                  fontSize: { xs: '0.7rem', sm: '0.75rem' },
+                                },
+                              }}
+                            />
+                          ))}
+                        </Box>
                       </CardContent>
                     </CardActionArea>
                   </Card>
