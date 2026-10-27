@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import React from 'react'
+import { useLanguage } from '../../i18n/LanguageContext'
 
 // Navigation bar configuration
 // To modify navigation bar order and content:
@@ -17,16 +18,15 @@ import React from 'react'
 // { name: "Projects", href: "#projects"},
 // { name: "Experience", href: "#experience"},
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  // { name: "Skills", href: "#skills"},
-  { name: "Background", href: "#backgrounds" },
-  // { name: "Experience", href: "#experience" },
-  { name: "Gallery", href: "#gallery" },
+  { key: 'home', href: '#home' },
+  { key: 'about', href: '#about' },
+  { key: 'projects', href: '#projects' },
+  { key: 'background', href: '#backgrounds' },
+  { key: 'gallery', href: '#gallery' },
 ]
 
 export default function Navbar() {
+  const { text, switchLocale } = useLanguage()
   const [activeSection, setActiveSection] = useState("home")
   const underlineRef = useRef<HTMLDivElement>(null)
   const navRef = useRef<HTMLUListElement>(null)
@@ -48,7 +48,7 @@ export default function Navbar() {
       })
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -77,15 +77,10 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-background/80 backdrop-blur-sm">
-      <div className="
-        max-w-4xl mx-auto 
-        px-3 sm:px-4 /* 移动端水平内边距3, sm(640px)以上为4 */
-        py-4
-      ">
+      <div className="mx-auto flex max-w-5xl items-center gap-2 px-3 py-3.5 sm:gap-4 sm:px-4 sm:py-4">
         <ul ref={navRef} className="
-          flex justify-center 
-          gap-4 sm:gap-8 /* 移动端间距4, sm(640px)以上为8 */
-          relative text-center overflow-x-auto
+          relative flex min-w-0 flex-1 justify-center
+          gap-3 overflow-x-auto text-center sm:gap-8
         ">
           <div
             ref={underlineRef}
@@ -93,7 +88,7 @@ export default function Navbar() {
           />
 
           {navItems.map((item) => (
-            <li key={item.name}>
+            <li key={item.key}>
               <a
                 href={item.href}
                 className={`
@@ -112,11 +107,21 @@ export default function Navbar() {
                   scrollToSection(item.href)
                 }}
               >
-                {item.name}
+                {text.nav[item.key as keyof typeof text.nav]}
               </a>
             </li>
           ))}
         </ul>
+
+        <button
+          type="button"
+          onClick={switchLocale}
+          aria-label={text.language.switchLabel}
+          title={text.language.switchLabel}
+          className="shrink-0 px-1 py-1 text-xs font-semibold text-foreground/65 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-500 sm:text-sm"
+        >
+          {text.language.buttonText}
+        </button>
       </div>
     </nav>
   )

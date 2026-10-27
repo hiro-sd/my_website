@@ -15,6 +15,8 @@ import {
   IconButton,
 } from '@mui/material'
 import { FiX } from 'react-icons/fi'
+import { useLanguage } from '../../i18n/LanguageContext'
+import type { LocalizedText } from '../../i18n/content'
 // import GradientBackground from '../common/GradientBackground'
 
 // Define photo data type
@@ -28,8 +30,8 @@ type Photo = {
   id: number
   image: string
   date: string
-  location: string
-  description: string
+  location: LocalizedText
+  description: LocalizedText
 }
 
 // Example photo data
@@ -43,90 +45,92 @@ const photos: Photo[] = [
     id: 10,
     image: "/gallery/20261002.webp",
     date: "2026.10.02",
-    location: "Cathedral of Santa Maria del Fiore, Florence",
-    description: "Florence is a city where every street looks like a work of art."
+    location: { en: "Cathedral of Santa Maria del Fiore, Florence", ja: "サンタ・マリア・デル・フィオーレ大聖堂、フィレンツェ" },
+    description: { en: "Florence is a city where every street looks like a work of art.", ja: "フィレンツェは、どこを歩いても絵になる街です。" }
   },
   {
     id: 11,
     image: "/gallery/20260929.webp",
     date: "2026.09.29",
-    location: "St. Peter’s Basilica, Vatican City",
-    description: "I took this shot, captivated by the Swiss Guards standing watch over Vatican City."
+    location: { en: "St. Peter’s Basilica, Vatican City", ja: "サン・ピエトロ大聖堂、バチカン市国" },
+    description: { en: "I took this shot, captivated by the Swiss Guards standing watch over Vatican City.", ja: "バチカンを護衛するスイス衛兵に見惚れて撮った一枚です。" }
   },
   {
     id: 12,
     image: "/gallery/20260520.webp",
     date: "2026.05.20",
-    location: "Trocadéro Gardens, Paris",
-    description: "I took a walk through the Trocadéro Gardens on a clear day, with a beautiful view of the Eiffel Tower."
+    location: { en: "Trocadéro Gardens, Paris", ja: "トロカデロ庭園、パリ" },
+    description: { en: "I took a walk through the Trocadéro Gardens on a clear day, with a beautiful view of the Eiffel Tower.", ja: "晴れた日のパリで、エッフェル塔がよく見えるトロカデロ庭園を散歩しました。" }
   },
   {
     id: 1,
     image: "/gallery/20251119.webp",
     date: "2025.11.19",
-    location: "Ninenzaka, Kyoto",
-    description: "Despite being such a famous spot, this was my first visit to Ninenzaka. It was bustling with visitors from around the world, and the atmosphere was incredible!"
+    location: { en: "Ninenzaka, Kyoto", ja: "二年坂、京都" },
+    description: { en: "Despite being such a famous spot, this was my first visit to Ninenzaka. It was bustling with visitors from around the world, and the atmosphere was incredible!", ja: "かなり有名な場所ですが、実は初めて訪れた二年坂。海外からの観光客も多く、雰囲気が最高でした。" }
   },
   {
     id: 2,
     image: "/gallery/20240507.webp",
     date: "2024.05.07",
-    location: "San Diego State University, California",
-    description: "San Diego State University, where I studied abroad. I loved this campus and came here every day."
+    location: { en: "San Diego State University, California", ja: "サンディエゴ州立大学、カリフォルニア" },
+    description: { en: "San Diego State University, where I studied abroad. I loved this campus and came here every day.", ja: "留学していたサンディエゴ州立大学。大好きなキャンパスで、毎日通いました。" }
   },
   {
     id: 3,
     image: "/gallery/20240429.webp",
     date: "2024.04.29",
-    location: "La Jolla Cove, California",
-    description: "I first saw La Jolla in my junior high school English textbook. This beautiful beach town on San Diego's coast truly shows why the city is called 'America's Finest City.'"
+    location: { en: "La Jolla Cove, California", ja: "ラホヤ・コーブ、カリフォルニア" },
+    description: { en: "I first saw La Jolla in my junior high school English textbook. This beautiful beach town on San Diego's coast truly shows why the city is called 'America's Finest City.'", ja: "中学校の英語の教科書に載っていたラホヤ。留学先のサンディエゴ郊外にある素敵なビーチタウンで、『America's Finest City』という愛称にふさわしい場所です。" }
   },
   {
     id: 4,
     image: "/gallery/20240405.webp",
     date: "2024.04.05",
-    location: "UNAM Central Library, Mexico City",
-    description: "The Central Library at UNAM, known for its striking mosaic murals inspired by Mexico's pre-Hispanic past. The university campus is also a UNESCO World Heritage Site."
+    location: { en: "UNAM Central Library, Mexico City", ja: "メキシコ国立自治大学中央図書館、メキシコシティ" },
+    description: { en: "The Central Library at UNAM, known for its striking mosaic murals inspired by Mexico's pre-Hispanic past. The university campus is also a UNESCO World Heritage Site.", ja: "メキシコ国立自治大学内にある中央図書館。先スペイン期の文化をモチーフにした壁画が特徴的で、キャンパスは世界文化遺産にも登録されています。" }
   },
   {
     id: 5,
     image: "/gallery/20240114.webp",
     date: "2024.01.14",
-    location: "Salar de Uyuni, Bolivia",
-    description: "Salar de Uyuni on a clear new-moon night. So far, this is the best place I have ever visited."
+    location: { en: "Salar de Uyuni, Bolivia", ja: "ウユニ塩湖、ボリビア" },
+    description: { en: "Salar de Uyuni on a clear new-moon night. So far, this is the best place I have ever visited.", ja: "晴れた新月の夜のウユニ塩湖。今のところ、人生で訪れた中で一番好きな場所です。" }
   },
   {
     id: 6,
     image: "/gallery/20240103.webp",
     date: "2024.01.03",
-    location: "Plaza de Bolívar, Bogota",
-    description: "A famous square in Bogota, Colombia, with an incredible number of pigeons."
+    location: { en: "Plaza de Bolívar, Bogota", ja: "ボリバル広場、ボゴタ" },
+    description: { en: "A famous square in Bogota, Colombia, with an incredible number of pigeons.", ja: "コロンビア・ボゴタの有名な広場。驚くほどたくさんの鳩がいました。" }
   },
   {
     id: 7,
     image: "/gallery/20231223.webp",
     date: "2023.12.23",
-    location: "Manhattan Bridge, New York",
-    description: "A shot from New York. The Manhattan Bridge looks especially beautiful from Dumbo."
+    location: { en: "Manhattan Bridge, New York", ja: "マンハッタン橋、ニューヨーク" },
+    description: { en: "A shot from New York. The Manhattan Bridge looks especially beautiful from Dumbo.", ja: "ニューヨークでの一枚。マンハッタン橋はダンボ地区から撮るときれいに見えます。" }
   },
   {
     id: 8,
     image: "/gallery/20231222.webp",
     date: "2023.12.22",
-    location: "University of Toronto, Toronto",
-    description: "The University of Toronto in winter: a quiet, historic campus where I even spotted a squirrel."
+    location: { en: "University of Toronto, Toronto", ja: "トロント大学、トロント" },
+    description: { en: "The University of Toronto in winter: a quiet, historic campus where I even spotted a squirrel.", ja: "冬のトロント大学。静かで歴史のあるキャンパスで、リスも見つけました。" }
   },
   {
     id: 9,
     image: "/gallery/20230730.webp",
     date: "2023.07.30",
-    location: "Jōdogahama, Iwate",
-    description: "Jodogahama in summer is one of my absolute favorite places in Japan."
+    location: { en: "Jōdogahama, Iwate", ja: "浄土ヶ浜、岩手" },
+    description: { en: "Jodogahama in summer is one of my absolute favorite places in Japan.", ja: "夏の浄土ヶ浜は、日本でも屈指のお気に入りスポットです。" }
   },
 ]
 
 export default function Gallery() {
+  const { locale, text } = useLanguage()
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null)
+  const headingClass = locale === 'ja' ? 'font-display-space' : 'font-display-outline'
 
   return (
     <>
@@ -144,7 +148,9 @@ export default function Gallery() {
         }}>
 
           <AnimatedText>
-            <h1 className="font-display-outline inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">Gallery</h1>
+            <h1 className={`${headingClass} inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12`}>
+              {text.sections.gallery}
+            </h1>
           </AnimatedText>
 
           <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} sx={{ position: 'relative', zIndex: 1, maxWidth: 'xl' }}>
@@ -180,7 +186,7 @@ export default function Gallery() {
                   >
                     <CardActionArea
                       onClick={() => setSelectedPhoto(photo)}
-                      aria-label={`View photo from ${photo.location}`}
+                      aria-label={`${text.gallery.viewPhoto} ${photo.location[locale]}`}
                       sx={{
                         height: '100%',
                         alignItems: 'stretch',
@@ -210,7 +216,7 @@ export default function Gallery() {
                         }}>
                           <Image
                             src={photo.image}
-                            alt={photo.description}
+                            alt={photo.description[locale]}
                             fill
                             sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 400px"
                             className="object-contain object-center"
@@ -225,7 +231,7 @@ export default function Gallery() {
                             md: '1.125rem'
                           }
                         }}>
-                          {photo.location}
+                          {photo.location[locale]}
                         </Typography>
                         <Typography variant="body2" sx={{
                           opacity: 0.7,
@@ -276,7 +282,7 @@ export default function Gallery() {
             }}>
               <IconButton
                 onClick={() => setSelectedPhoto(null)}
-                aria-label="Close photo"
+                aria-label={text.gallery.close}
                 sx={{
                   position: 'absolute',
                   top: 12,
@@ -291,7 +297,7 @@ export default function Gallery() {
               </IconButton>
               <Image
                 src={selectedPhoto.image}
-                alt={selectedPhoto.description}
+                alt={selectedPhoto.description[locale]}
                 fill
                 sizes="(max-width: 600px) 40vh, 50vh"
                 className="object-contain object-center"
@@ -299,13 +305,13 @@ export default function Gallery() {
             </Box>
             <Box sx={{ p: { xs: 2, sm: 3 } }}>
               <Typography id="gallery-photo-title" variant="h6" sx={{ fontWeight: 600 }}>
-                {selectedPhoto.location}
+                {selectedPhoto.location[locale]}
               </Typography>
               <Typography variant="body2" sx={{ mt: 0.5, opacity: 0.65 }}>
                 {selectedPhoto.date}
               </Typography>
               <Typography id="gallery-photo-description" variant="body1" sx={{ mt: 1.5, opacity: 0.8 }}>
-                {selectedPhoto.description}
+                {selectedPhoto.description[locale]}
               </Typography>
             </Box>
           </Box>

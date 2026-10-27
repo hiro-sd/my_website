@@ -70,6 +70,13 @@ export const metadata: Metadata = {
       "Personal website of Hiroto Yoshida.",
     images: ["/20250323.JPG"],
   },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/",
+      "ja-JP": "/ja",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -78,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `

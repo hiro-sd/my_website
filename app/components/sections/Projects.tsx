@@ -20,6 +20,8 @@ import {
   type Theme,
 } from '@mui/material'
 import { FiExternalLink, FiX } from 'react-icons/fi'
+import { useLanguage } from '../../i18n/LanguageContext'
+import type { Locale } from '../../i18n/content'
 
 const projectCardSx: SxProps<Theme> = {
   height: '100%',
@@ -46,20 +48,26 @@ const projectCardSx: SxProps<Theme> = {
   },
 }
 
-const detailSections = (project: Project) => [
-  { label: 'Problem', content: project.problem },
+const detailSections = (
+  project: Project,
+  locale: Locale,
+  labels: ReturnType<typeof useLanguage>['text']['projects'],
+) => [
+  { label: labels.problem, content: project.problem[locale] },
   {
-    label: 'My Role',
+    label: labels.role,
     content: project.roles.length > 0
-      ? project.roles.join(' / ')
-      : 'To be added after a factual review.',
+      ? project.roles.map(role => role[locale]).join(' / ')
+      : labels.pendingRole,
   },
-  { label: 'Current Result', content: project.currentResult },
-  { label: 'Next Step', content: project.nextStep },
+  { label: labels.currentResult, content: project.currentResult[locale] },
+  { label: labels.nextStep, content: project.nextStep[locale] },
 ]
 
 export default function Projects() {
+  const { locale, text } = useLanguage()
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const headingClass = locale === 'ja' ? 'font-display-space' : 'font-display-outline'
 
   return (
     <>
@@ -77,8 +85,8 @@ export default function Projects() {
           overflow: 'hidden',
         }}>
           <AnimatedText>
-            <h1 className="font-display-outline inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">
-              Projects
+            <h1 className={`${headingClass} inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12`}>
+              {text.sections.projects}
             </h1>
           </AnimatedText>
 
@@ -89,7 +97,7 @@ export default function Projects() {
                   <Card elevation={0} sx={projectCardSx}>
                     <CardActionArea
                       onClick={() => setSelectedProject(project)}
-                      aria-label={`View details for ${project.title}`}
+                      aria-label={`${text.projects.viewDetails} ${project.title[locale]}`}
                       sx={{
                         height: '100%',
                         alignItems: 'stretch',
@@ -118,7 +126,7 @@ export default function Projects() {
                         }}>
                           <Image
                             src={project.coverImage}
-                            alt={project.tagline}
+                            alt={project.tagline[locale]}
                             fill
                             sizes="(max-width: 900px) 100vw, 50vw"
                             className="object-cover object-center"
@@ -126,13 +134,13 @@ export default function Projects() {
                         </Box>
 
                         <Typography variant="h6" sx={{ fontWeight: 600, lineHeight: 1.25, mb: 1 }}>
-                          {project.tagline}
+                          {project.tagline[locale]}
                         </Typography>
                         <Typography variant="body2" sx={{ opacity: 0.8, lineHeight: 1.5, mb: 0.75 }}>
-                          {project.cardDescription}
+                          {project.cardDescription[locale]}
                         </Typography>
                         <Typography variant="body2" sx={{ opacity: 0.6, mb: 1.5 }}>
-                          {project.period}
+                          {project.period[locale]}
                         </Typography>
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, mt: 'auto' }}>
                           {project.skills.map(skill => (
@@ -193,7 +201,7 @@ export default function Projects() {
             }}>
               <IconButton
                 onClick={() => setSelectedProject(null)}
-                aria-label="Close project details"
+                aria-label={text.projects.close}
                 sx={{
                   position: 'absolute',
                   top: 12,
@@ -214,7 +222,7 @@ export default function Projects() {
                 loop
                 playsInline
                 preload="auto"
-                aria-label={`${selectedProject.title} demonstration`}
+                aria-label={`${selectedProject.title[locale]} ${text.projects.demonstration}`}
                 className="h-full w-full object-contain"
               >
                 <source src={selectedProject.video} type="video/mp4" />
@@ -223,13 +231,13 @@ export default function Projects() {
 
             <Box sx={{ p: { xs: 2.5, sm: 4 } }}>
               <Typography id="project-detail-title" variant="h5" sx={{ fontWeight: 600 }}>
-                {selectedProject.title}
+                {selectedProject.title[locale]}
               </Typography>
               <Typography variant="body2" sx={{ mt: 0.75, opacity: 0.65 }}>
-                {selectedProject.period}
+                {selectedProject.period[locale]}
               </Typography>
               <Typography id="project-detail-summary" variant="body1" sx={{ mt: 2, opacity: 0.85 }}>
-                {selectedProject.overview}
+                {selectedProject.overview[locale]}
               </Typography>
 
               <Box sx={{
@@ -239,7 +247,7 @@ export default function Projects() {
                 columnGap: 5,
                 rowGap: 3,
               }}>
-                {detailSections(selectedProject).map(section => (
+                {detailSections(selectedProject, locale, text.projects).map(section => (
                   <Box key={section.label} sx={{ pt: 2, borderTop: '1px solid rgba(128, 128, 128, 0.3)' }}>
                     <Typography variant="h6" sx={{ fontWeight: 600, fontSize: '1rem' }}>
                       {section.label}
@@ -253,7 +261,7 @@ export default function Projects() {
 
               <Box sx={{ mt: 4, pt: 2, borderTop: '1px solid rgba(128, 128, 128, 0.3)' }}>
                 <Typography variant="h6" sx={{ fontWeight: 600, fontSize: '1rem' }}>
-                  Technologies & Methods
+                  {text.projects.technologies}
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1.5 }}>
                   {selectedProject.skills.map(skill => (
@@ -275,7 +283,7 @@ export default function Projects() {
 
               <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid rgba(128, 128, 128, 0.3)' }}>
                 <Typography variant="h6" sx={{ fontWeight: 600, fontSize: '1rem' }}>
-                  Paper
+                  {text.projects.paper}
                 </Typography>
                 {selectedProject.paper ? (
                   <Link
@@ -284,12 +292,12 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     sx={{ mt: 1, display: 'inline-flex', alignItems: 'center', gap: 0.75 }}
                   >
-                    {selectedProject.paper.label}
+                    {selectedProject.paper.label[locale]}
                     <FiExternalLink aria-hidden="true" />
                   </Link>
                 ) : (
                   <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
-                    Paper link will be added soon.
+                    {text.projects.pendingPaper}
                   </Typography>
                 )}
               </Box>

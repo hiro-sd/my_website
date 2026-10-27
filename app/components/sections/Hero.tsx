@@ -4,6 +4,7 @@ import Image from "next/image"
 import AnimatedText from "../common/AnimatedText"
 // import FloatingElements from "../common/FloatingElements"
 import { FiInstagram } from "react-icons/fi"
+import { useLanguage } from "../../i18n/LanguageContext"
 
 const socialLinkClass = `
   relative group z-20 w-full sm:w-auto
@@ -14,6 +15,8 @@ const socialLinkClass = `
 `
 
 export default function Hero() {
+  const { locale, text } = useLanguage()
+
   return (
     <section id="home" className="grid w-full max-w-full grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 overflow-x-clip sm:p-20 font-[family-name:var(--font-body)]">
       {/* <FloatingElements /> */}
@@ -37,9 +40,27 @@ export default function Hero() {
           className="w-full max-w-2xl text-center"
         >
           <p className="text-foreground/80 leading-relaxed">
-            I'm a Master's student at <a href="https://hapislab.org/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">Shinoda & Makino Laboratory</a>
-            , <a href="https://www.k.u-tokyo.ac.jp/" target="_blank" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">GSFS</a>, UTokyo.<br />
-            My research interests include acoustic levitation and its real-world applications.<br />
+            {locale === 'ja' ? (
+              <>
+                <a href="https://www.k.u-tokyo.ac.jp/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">
+                  東京大学大学院新領域創成科学研究科
+                </a>{'の'}
+                <a href="https://hapislab.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">
+                  篠田・牧野研究室
+                </a>{text.hero.universitySuffix}
+              </>
+            ) : (
+              <>
+                {text.hero.introduction}{' '}
+                <a href="https://hapislab.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">
+                  Shinoda & Makino Laboratory
+                </a>{', '}
+                <a href="https://www.k.u-tokyo.ac.jp/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 duration-300 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-purple-600 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-purple-400">
+                  GSFS
+                </a>{`, ${text.hero.universitySuffix}`}
+              </>
+            )}<br />
+            {text.hero.research}<br />
           </p>
         </AnimatedText>
 
