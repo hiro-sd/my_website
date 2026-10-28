@@ -55,6 +55,11 @@ export default function About() { // TODO: Edit this section.
                 <p className="text-lg text-foreground/80 leading-relaxed">
                   {text.about.personalText}
                 </p>
+                <ul className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium text-[var(--foreground)] opacity-50">
+                  {text.about.personalKeywords.map((keyword) => (
+                    <li key={keyword}>{keyword}</li>
+                  ))}
+                </ul>
               </div>
             </AnimatedText>
 
@@ -67,6 +72,11 @@ export default function About() { // TODO: Edit this section.
                 <p className="text-lg text-foreground/80 leading-relaxed">
                   {text.about.researchText}
                 </p>
+                <ul className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium text-[var(--foreground)] opacity-50">
+                  {text.about.researchKeywords.map((keyword) => (
+                    <li key={keyword}>{keyword}</li>
+                  ))}
+                </ul>
               </div>
             </AnimatedText>
           </div>
