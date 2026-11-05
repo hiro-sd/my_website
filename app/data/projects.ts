@@ -165,7 +165,7 @@ export const projects: Project[] = [
     category: 'Personal',
     status: 'Ongoing',
     title: { en: 'NPB/MLB Weekly Digest for LINE', ja: 'NPB・MLB週間ダイジェストのLINE配信' },
-    tagline: { en: 'A week of baseball, delivered to LINE.', ja: '野球の1週間を、LINEに届ける。' },
+    tagline: { en: 'A week of baseball, delivered to LINE.', ja: '野球の1週間を、LINEに届ける' },
     cardDescription: {
       en: 'A personal workflow connecting ChatGPT, an MCP server, and the LINE Messaging API.',
       ja: 'ChatGPTで作成した週間ダイジェストを、MCPサーバー経由でLINEグループへ届ける。',
