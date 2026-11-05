@@ -97,6 +97,7 @@ export const content = {
     projects: {
       viewDetails: 'View details for',
       close: 'Close project details',
+      categories: { Research: 'Research', Personal: 'Personal Project' },
       demonstration: 'demonstration',
       keyResult: 'Key Result',
       howItWorks: 'How It Works',
@@ -104,6 +105,7 @@ export const content = {
       implementation: 'Implementation',
       publication: 'Publication',
       technologies: 'Technologies & Methods',
+      sourceCode: 'Source Code',
       publicLinkPending: 'Public paper link not yet available.',
     },
     gallery: {
@@ -206,6 +208,7 @@ export const content = {
     projects: {
       viewDetails: '詳細を見る：',
       close: 'プロジェクト詳細を閉じる',
+      categories: { Research: '研究', Personal: '個人プロジェクト' },
       demonstration: 'デモ動画',
       keyResult: '主な結果',
       howItWorks: '仕組み',
@@ -213,6 +216,7 @@ export const content = {
       implementation: '実装内容',
       publication: '論文・発表',
       technologies: '使用技術・手法',
+      sourceCode: 'ソースコード',
       publicLinkPending: '公開論文へのリンクは未掲載です。',
     },
     gallery: {

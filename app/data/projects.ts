@@ -3,7 +3,7 @@ import type { LocalizedText } from '../i18n/content'
 export type ProjectCategory = 'Research' | 'Personal'
 export type ProjectStatus = 'Completed' | 'Ongoing'
 
-export type Project = {
+type ProjectBase = {
   id: number
   slug: string
   category: ProjectCategory
@@ -12,17 +12,30 @@ export type Project = {
   tagline: LocalizedText
   cardDescription: LocalizedText
   overview: LocalizedText
+  coverImage: string
+  skills: string[]
+  steps: { title: LocalizedText; description: LocalizedText }[]
+  implementation: LocalizedText[]
+}
+
+type ResearchProject = ProjectBase & {
+  category: 'Research'
   period: LocalizedText
   video: string
   demoCaption: LocalizedText
-  coverImage: string
-  skills: string[]
   keyResult: { value: string; label: LocalizedText; context: LocalizedText }
-  steps: { title: LocalizedText; description: LocalizedText }[]
   evidence: { image: string; alt: LocalizedText; caption: LocalizedText }[]
-  implementation: LocalizedText[]
   publication: { venue: LocalizedText; citation: LocalizedText; url?: string }
 }
+
+type PersonalProject = ProjectBase & {
+  category: 'Personal'
+  illustrationCaption: LocalizedText
+  scopeNote: LocalizedText
+  repositoryUrl: string
+}
+
+export type Project = ResearchProject | PersonalProject
 
 export const projects: Project[] = [
   {
@@ -103,7 +116,7 @@ export const projects: Project[] = [
     keyResult: {
       value: '54 / 100',
       label: { en: 'releases held for at least five seconds (54%)', ja: '5秒以上の保持に成功した試行（54%）' },
-      context: { en: 'In a separate 100 ms rolling-force experiment, 54 of 100 eligible releases met the five-second hold criterion (95% Wilson interval: 44.3–63.4%). This is a different experimental series from the conference manuscript, which reports 37/105 under different conditions.', ja: '解放100試行のうち54試行で5秒以上保持しました（Wilson法による95%信頼区間：44.3–63.4%）。' },
+      context: { en: 'The sphere was held for at least five seconds in 54 of 100 release trials (95% confidence interval using the Wilson method: 44.3–63.4%).', ja: '解放100試行のうち54試行で5秒以上保持しました（Wilson法による95%信頼区間：44.3–63.4%）。' },
     },
     steps: [
       {
@@ -143,5 +156,51 @@ export const projects: Project[] = [
       venue: { en: 'SICE SI 2026 · Dec. 8-10, 2026 (upcoming)', ja: 'SICE SI 2026 · 2026年12月8–10日（開催予定）' },
       citation: { en: 'H. Yoshida et al., “Feedback Control for Capturing a Sphere in Free Fall Using an Ultrasonic Phased Array.”', ja: '吉田寛人ほか「超音波フェーズドアレイによる自由落下する球体の捕捉制御」' },
     },
+  },
+  {
+    id: 3,
+    slug: 'npb-mlb-weekly-digest',
+    category: 'Personal',
+    status: 'Ongoing',
+    title: { en: 'NPB/MLB Weekly Digest for LINE', ja: 'NPB・MLB週間ダイジェストのLINE配信' },
+    tagline: { en: 'A week of baseball, delivered to LINE.', ja: '野球の1週間を、LINEに届ける。' },
+    cardDescription: {
+      en: 'A personal workflow connecting ChatGPT, an MCP server, and the LINE Messaging API.',
+      ja: 'ChatGPTで作成した週間ダイジェストを、MCPサーバー経由でLINEグループへ届ける。',
+    },
+    overview: {
+      en: 'Built around my interest in NPB and MLB, this project uses a weekly ChatGPT task to prepare a baseball digest. A custom MCP tool hosted on Vercel receives the finalized text and sends it to a LINE group through the LINE Messaging API.',
+      ja: 'NPBとMLBへの関心から作った個人プロジェクトです。ChatGPTの定期タスクで野球の週間ダイジェストを作成し、Vercel上のMCPツールを経由してLINE Messaging APIでグループへ配信します。',
+    },
+    coverImage: '/project/weekly-digest-cover.svg',
+    illustrationCaption: {
+      en: 'Conceptual illustration of the delivery flow; this is not a screenshot of an actual LINE message.',
+      ja: '配信の流れを表した概念図です。実際のLINEメッセージの画面ではありません。',
+    },
+    skills: ['ChatGPT', 'MCP', 'LINE Messaging API', 'Vercel', 'Next.js', 'TypeScript'],
+    steps: [
+      {
+        title: { en: 'Prepare the digest', ja: 'ダイジェストを作る' },
+        description: { en: 'A weekly ChatGPT task prepares the NPB/MLB digest before passing the finalized text to the delivery tool.', ja: 'ChatGPTの定期タスクがNPB・MLBの週間ダイジェストを作成し、完成した文章を配信ツールへ渡します。' },
+      },
+      {
+        title: { en: 'Call the MCP tool', ja: 'MCPツールに渡す' },
+        description: { en: 'The send_weekly_digest tool receives the digest text and a stable identifier for that edition.', ja: 'send_weekly_digestツールが本文と、その週を識別するIDを受け取ります。' },
+      },
+      {
+        title: { en: 'Deliver to LINE', ja: 'LINEへ配信する' },
+        description: { en: 'The Vercel-hosted server sends the text to a fixed LINE group through the Messaging API, splitting long messages when needed.', ja: 'Vercel上のサーバーが必要に応じて長文を分割し、Messaging APIで送信先を固定したLINEグループへ配信します。' },
+      },
+    ],
+    implementation: [
+      { en: 'The LINE destination and credentials stay on the server; a private capability URL protects the MCP endpoint.', ja: 'LINEの送信先と認証情報はサーバー側で管理し、非公開の認証用URLでMCPエンドポイントを保護。' },
+      { en: 'Message splitting respects LINE limits, while a deterministic retry key reduces duplicate posts on retries.', ja: 'LINEの文字数制限に合わせて本文を分割し、再送時の重複を抑えるリトライキーを使用。' },
+      { en: 'The webhook verifies LINE signatures before processing events used to configure the destination group.', ja: '送信先グループの設定に使うWebhookでは、イベント処理前にLINEの署名を検証。' },
+    ],
+    scopeNote: {
+      en: 'The public repository contains the delivery server. Digest writing and the weekly trigger are outside this codebase.',
+      ja: '公開リポジトリに含まれるのは配信サーバーです。ダイジェストの作成と週次の起動設定は、このコードの外側にあります。',
+    },
+    repositoryUrl: 'https://github.com/hiro-sd/NPB_MLB_weekly_digest',
   },
 ]

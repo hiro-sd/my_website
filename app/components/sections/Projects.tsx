@@ -81,9 +81,9 @@ export default function Projects() {
             </h1>
           </AnimatedText>
 
-          <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} sx={{ position: 'relative', zIndex: 1, maxWidth: 'lg' }}>
+          <Grid container spacing={{ xs: 2, sm: 3, md: 3 }} sx={{ position: 'relative', zIndex: 1, maxWidth: 'lg' }}>
             {projects.map(project => (
-              <Grid item xs={12} md={6} key={project.id} sx={{ display: 'flex' }}>
+              <Grid item xs={12} sm={6} md={4} key={project.id} sx={{ display: 'flex' }}>
                 <AnimatedText className="h-full w-full">
                   <Card elevation={0} sx={projectCardSx}>
                     <CardActionArea
@@ -107,7 +107,7 @@ export default function Projects() {
                         flexDirection: 'column',
                       }}>
                         <Box sx={{
-                          mb: { xs: 2, md: 2.5 },
+                          mb: 1.75,
                           position: 'relative',
                           width: '100%',
                           aspectRatio: '16 / 9',
@@ -119,22 +119,27 @@ export default function Projects() {
                             src={project.coverImage}
                             alt={project.tagline[locale]}
                             fill
-                            sizes="(max-width: 900px) 100vw, 50vw"
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                             className="object-cover object-center"
                           />
                         </Box>
 
-                        <Typography variant="h6" sx={{ fontWeight: 600, lineHeight: 1.25, mb: 1 }}>
+                        <Typography variant="caption" sx={{ display: 'block', alignSelf: 'flex-start', mb: 1, fontWeight: 700, color: 'var(--foreground)', opacity: 0.75 }}>
+                          {text.projects.categories[project.category]}
+                        </Typography>
+                        <Typography variant="h6" sx={{ fontWeight: 600, fontSize: { xs: '1.15rem', md: '1.05rem', lg: '1.2rem' }, lineHeight: 1.3, mb: 1 }}>
                           {project.tagline[locale]}
                         </Typography>
                         <Typography variant="body2" sx={{ opacity: 0.8, lineHeight: 1.5, mb: 0.75 }}>
                           {project.cardDescription[locale]}
                         </Typography>
-                        <Typography variant="body2" sx={{ opacity: 0.6, mb: 1.5 }}>
-                          {project.period[locale]}
-                        </Typography>
+                        {project.category === 'Research' && (
+                          <Typography variant="body2" sx={{ opacity: 0.6, mb: 1.5 }}>
+                            {project.period[locale]}
+                          </Typography>
+                        )}
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, mt: 'auto' }}>
-                          {project.skills.map(skill => (
+                          {project.skills.slice(0, 4).map(skill => (
                             <Chip
                               key={skill}
                               label={skill}
@@ -187,7 +192,8 @@ export default function Projects() {
             <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 2 }}>
               <Box sx={{ minWidth: 0 }}>
                 <Typography variant="body2" sx={{ opacity: 0.6, mb: 1 }}>
-                  {selectedProject.period[locale]}
+                  {text.projects.categories[selectedProject.category]}
+                  {selectedProject.category === 'Research' ? ` · ${selectedProject.period[locale]}` : ''}
                 </Typography>
                 <Typography id="project-detail-title" component="h2" variant="h5" sx={{ fontWeight: 700, fontSize: { xs: '1.3rem', sm: '1.5rem' }, lineHeight: 1.25, overflowWrap: 'anywhere' }}>
                   {selectedProject.title[locale]}
@@ -201,41 +207,54 @@ export default function Projects() {
               {selectedProject.overview[locale]}
             </Typography>
 
-            <Box component="figure" sx={{ m: 0, mt: 3 }}>
-              <Box sx={{ height: { xs: 260, sm: 330, md: 380 }, backgroundColor: '#050505', borderRadius: 1, overflow: 'hidden' }}>
-                <video
-                  key={selectedProject.video}
-                  autoPlay muted loop playsInline preload="metadata"
-                  poster={selectedProject.coverImage}
-                  aria-label={`${selectedProject.title[locale]} ${text.projects.demonstration}`}
-                  className="h-full w-full object-contain"
-                >
-                  <source src={selectedProject.video} type="video/mp4" />
-                </video>
-              </Box>
-              <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
-                {selectedProject.demoCaption[locale]}
-              </Typography>
-            </Box>
+            {selectedProject.category === 'Research' ? (
+              <>
+                <Box component="figure" sx={{ m: 0, mt: 3 }}>
+                  <Box sx={{ height: { xs: 260, sm: 330, md: 380 }, backgroundColor: '#050505', borderRadius: 1, overflow: 'hidden' }}>
+                    <video
+                      key={selectedProject.video}
+                      autoPlay muted loop playsInline preload="metadata"
+                      poster={selectedProject.coverImage}
+                      aria-label={`${selectedProject.title[locale]} ${text.projects.demonstration}`}
+                      className="h-full w-full object-contain"
+                    >
+                      <source src={selectedProject.video} type="video/mp4" />
+                    </video>
+                  </Box>
+                  <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
+                    {selectedProject.demoCaption[locale]}
+                  </Typography>
+                </Box>
 
-            <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
-              <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.keyResult}</Typography>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', columnGap: 2, mt: 1.5 }}>
-                <Typography sx={{ fontSize: { xs: '2.5rem', sm: '3.2rem' }, fontWeight: 700, lineHeight: 1.1, color: 'var(--foreground)' }}>
-                  {selectedProject.keyResult.value}
-                </Typography>
-                <Typography sx={{ fontWeight: 600, fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-                  {selectedProject.keyResult.label[locale]}
+                <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
+                  <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.keyResult}</Typography>
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', columnGap: 2, mt: 1.5 }}>
+                    <Typography sx={{ fontSize: { xs: '2.5rem', sm: '3.2rem' }, fontWeight: 700, lineHeight: 1.1, color: 'var(--foreground)' }}>
+                      {selectedProject.keyResult.value}
+                    </Typography>
+                    <Typography sx={{ fontWeight: 600, fontSize: { xs: '1rem', sm: '1.1rem' } }}>
+                      {selectedProject.keyResult.label[locale]}
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" sx={{ mt: 1.5, maxWidth: 850, opacity: 0.8, lineHeight: 1.75 }}>
+                    {selectedProject.keyResult.context[locale]}
+                  </Typography>
+                </Box>
+              </>
+            ) : (
+              <Box component="figure" sx={{ m: 0, mt: 3 }}>
+                <Box sx={{ position: 'relative', width: '100%', aspectRatio: '16 / 9', maxHeight: 380, backgroundColor: '#0d1117', borderRadius: 1, overflow: 'hidden' }}>
+                  <Image src={selectedProject.coverImage} alt="" fill sizes="(max-width: 900px) 100vw, 900px" className="object-contain" />
+                </Box>
+                <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
+                  {selectedProject.illustrationCaption[locale]}
                 </Typography>
               </Box>
-              <Typography variant="body2" sx={{ mt: 1.5, maxWidth: 850, opacity: 0.8, lineHeight: 1.75 }}>
-                {selectedProject.keyResult.context[locale]}
-              </Typography>
-            </Box>
+            )}
 
             <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
               <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.howItWorks}</Typography>
-              {selectedProject.id === 1 && (
+              {selectedProject.category === 'Research' && selectedProject.id === 1 && (
                 <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '170px minmax(0, 1fr)' }, gap: { xs: 3, md: 4 }, alignItems: 'center', mt: 3 }}>
                   <Box component="figure" sx={{ m: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Box
@@ -298,21 +317,23 @@ export default function Projects() {
               </Box>
             </Box>
 
-            <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
-              <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.evidence}</Typography>
-              <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 3, mt: 2 }}>
-                {selectedProject.evidence.map(item => (
-                  <Box component="figure" key={item.image} sx={{ m: 0, minWidth: 0 }}>
-                    <Link href={item.image} target="_blank" rel="noopener noreferrer" aria-label={item.alt[locale]} sx={{ display: 'block' }}>
-                      <Box sx={{ position: 'relative', height: { xs: 250, sm: 380, md: 450 }, backgroundColor: '#fff', borderRadius: 1, overflow: 'hidden' }}>
-                        <Image src={item.image} alt={item.alt[locale]} fill sizes="(max-width: 900px) 100vw, 50vw" style={{ objectFit: 'contain' }} />
-                      </Box>
-                    </Link>
-                    <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.78, lineHeight: 1.65 }}>{item.caption[locale]}</Typography>
-                  </Box>
-                ))}
+            {selectedProject.category === 'Research' && (
+              <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
+                <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.evidence}</Typography>
+                <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 3, mt: 2 }}>
+                  {selectedProject.evidence.map(item => (
+                    <Box component="figure" key={item.image} sx={{ m: 0, minWidth: 0 }}>
+                      <Link href={item.image} target="_blank" rel="noopener noreferrer" aria-label={item.alt[locale]} sx={{ display: 'block' }}>
+                        <Box sx={{ position: 'relative', height: { xs: 250, sm: 380, md: 450 }, backgroundColor: '#fff', borderRadius: 1, overflow: 'hidden' }}>
+                          <Image src={item.image} alt={item.alt[locale]} fill sizes="(max-width: 900px) 100vw, 50vw" style={{ objectFit: 'contain' }} />
+                        </Box>
+                      </Link>
+                      <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.78, lineHeight: 1.65 }}>{item.caption[locale]}</Typography>
+                    </Box>
+                  ))}
+                </Box>
               </Box>
-            </Box>
+            )}
 
             <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
               <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.implementation}</Typography>
@@ -329,18 +350,28 @@ export default function Projects() {
               </Box>
             </Box>
 
-            <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
-              <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.publication}</Typography>
-              <Typography sx={{ mt: 1.5, fontWeight: 600 }}>{selectedProject.publication.venue[locale]}</Typography>
-              <Typography variant="body2" sx={{ mt: 0.75, opacity: 0.8, lineHeight: 1.7 }}>{selectedProject.publication.citation[locale]}</Typography>
-              {selectedProject.publication.url ? (
-                <Link href={selectedProject.publication.url} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 1.5 }}>
-                  {text.projects.publication}<FiExternalLink aria-hidden="true" />
+            {selectedProject.category === 'Research' ? (
+              <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
+                <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.publication}</Typography>
+                <Typography sx={{ mt: 1.5, fontWeight: 600 }}>{selectedProject.publication.venue[locale]}</Typography>
+                <Typography variant="body2" sx={{ mt: 0.75, opacity: 0.8, lineHeight: 1.7 }}>{selectedProject.publication.citation[locale]}</Typography>
+                {selectedProject.publication.url ? (
+                  <Link href={selectedProject.publication.url} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 1.5 }}>
+                    {text.projects.publication}<FiExternalLink aria-hidden="true" />
+                  </Link>
+                ) : (
+                  <Typography variant="body2" sx={{ mt: 1, opacity: 0.6 }}>{text.projects.publicLinkPending}</Typography>
+                )}
+              </Box>
+            ) : (
+              <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
+                <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.sourceCode}</Typography>
+                <Typography variant="body2" sx={{ mt: 1.5, opacity: 0.78, lineHeight: 1.7 }}>{selectedProject.scopeNote[locale]}</Typography>
+                <Link href={selectedProject.repositoryUrl} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 1.5, color: 'var(--foreground)' }}>
+                  GitHub<FiExternalLink aria-hidden="true" />
                 </Link>
-              ) : (
-                <Typography variant="body2" sx={{ mt: 1, opacity: 0.6 }}>{text.projects.publicLinkPending}</Typography>
-              )}
-            </Box>
+              </Box>
+            )}
           </Box>
         )}
       </Dialog>

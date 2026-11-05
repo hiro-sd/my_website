@@ -8,7 +8,7 @@ Live site: [https://hirotoyoshida.vercel.app](https://hirotoyoshida.vercel.app)
 
 - **Home** - Profile, research interests, and social links
 - **About** - Personal background, interests, research field, and photos
-- **Projects** - Looping research videos with detailed project dialogs
+- **Projects** - Research and personal projects with category labels, technical details, and source links where available
 - **Background** - Education, publications, internships, and certifications
 - **Gallery** - Responsive travel gallery with captions and enlarged photo dialogs
 

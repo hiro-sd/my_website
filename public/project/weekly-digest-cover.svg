@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Baseball weekly digest delivery diagram</title>
+  <desc id="desc">A baseball, a weekly digest, and a phone message connected from left to right</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#151b22"/>
+      <stop offset="1" stop-color="#080c11"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f8f8f4"/>
+      <stop offset="1" stop-color="#dce4e7"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="26" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#background)"/>
+  <path d="M0 144H1600M0 756H1600" stroke="#333d43" stroke-width="2" opacity=".55"/>
+  <path d="M110 0V900M1490 0V900" stroke="#333d43" stroke-width="2" opacity=".35"/>
+
+  <circle cx="275" cy="430" r="160" fill="#f4f4ed" filter="url(#shadow)"/>
+  <circle cx="275" cy="430" r="153" fill="none" stroke="#dce2de" stroke-width="3"/>
+  <path d="M195 295C260 361 260 499 195 565M355 295C290 361 290 499 355 565" fill="none" stroke="#c85750" stroke-width="8" stroke-linecap="round"/>
+  <path d="M211 319l-24 19m40 2-27 20m37 8-29 20m31 9-30 20m31 9-30 20m28 9-28 20m26 10-27 20m24 11-25 19M339 319l24 19m-40 2 27 20m-37 8 29 20m-31 9 30 20m-31 9 30 20m-28 9 28 20m-26 10 27 20m-24 11 25 19" fill="none" stroke="#c85750" stroke-width="5" stroke-linecap="round"/>
+  <text x="275" y="665" fill="#d3d9da" font-family="Arial, sans-serif" font-size="47" font-weight="700" text-anchor="middle">NPB / MLB</text>
+
+  <path d="M475 430h95" fill="none" stroke="#78b8bc" stroke-width="7" stroke-linecap="round"/>
+  <path d="m553 410 25 20-25 20" fill="none" stroke="#78b8bc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="620" y="156" width="392" height="558" rx="22" fill="url(#paper)" filter="url(#shadow)"/>
+  <rect x="655" y="191" width="322" height="12" rx="6" fill="#26363e" opacity=".22"/>
+  <text x="655" y="280" fill="#17252a" font-family="Arial, sans-serif" font-size="44" font-weight="700">WEEKLY</text>
+  <text x="655" y="334" fill="#17252a" font-family="Arial, sans-serif" font-size="44" font-weight="700">DIGEST</text>
+  <path d="M655 370h322" stroke="#92a7ac" stroke-width="3"/>
+  <rect x="655" y="402" width="64" height="25" rx="5" fill="#c85750"/>
+  <path d="M738 414h218M655 451h300M655 477h266" stroke="#748c92" stroke-width="12" stroke-linecap="round"/>
+  <rect x="655" y="518" width="64" height="25" rx="5" fill="#4a8896"/>
+  <path d="M738 530h201M655 568h300M655 594h238" stroke="#748c92" stroke-width="12" stroke-linecap="round"/>
+  <text x="816" y="678" fill="#41565b" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle">ChatGPT</text>
+
+  <path d="M1049 430h95" fill="none" stroke="#78b8bc" stroke-width="7" stroke-linecap="round"/>
+  <path d="m1127 410 25 20-25 20" fill="none" stroke="#78b8bc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1100" y="397" fill="#9bc9ca" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle">MCP</text>
+
+  <rect x="1195" y="126" width="280" height="640" rx="44" fill="#1b252a" stroke="#667b80" stroke-width="8" filter="url(#shadow)"/>
+  <rect x="1211" y="145" width="248" height="602" rx="31" fill="#e9f0ed"/>
+  <rect x="1272" y="149" width="126" height="22" rx="11" fill="#1b252a"/>
+  <path d="M1211 215h248" stroke="#d3ded9" stroke-width="3"/>
+  <circle cx="1249" cy="188" r="16" fill="#3bb77b"/>
+  <text x="1280" y="197" fill="#254039" font-family="Arial, sans-serif" font-size="27" font-weight="700">LINE</text>
+  <rect x="1235" y="280" width="194" height="241" rx="22" fill="#57c888"/>
+  <text x="1254" y="321" fill="#153e2c" font-family="Arial, sans-serif" font-size="23" font-weight="700">WEEKLY</text>
+  <path d="M1254 355h146M1254 386h154M1254 417h130M1254 461h147M1254 492h110" stroke="#236348" stroke-width="12" stroke-linecap="round" opacity=".5"/>
+  <rect x="1264" y="704" width="142" height="8" rx="4" fill="#8ca49a"/>
+</svg>
