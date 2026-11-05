@@ -106,6 +106,8 @@ export const content = {
       publication: 'Publication',
       technologies: 'Technologies & Methods',
       sourceCode: 'Source Code',
+      deliveryExample: 'Delivery Example',
+      viewFullImage: 'View full screenshot',
       publicLinkPending: 'Public paper link not yet available.',
     },
     gallery: {
@@ -217,6 +219,8 @@ export const content = {
       publication: '論文・発表',
       technologies: '使用技術・手法',
       sourceCode: 'ソースコード',
+      deliveryExample: '配信例',
+      viewFullImage: 'スクリーンショット全体を見る',
       publicLinkPending: '公開論文へのリンクは未掲載です。',
     },
     gallery: {

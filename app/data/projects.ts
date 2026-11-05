@@ -30,7 +30,9 @@ type ResearchProject = ProjectBase & {
 
 type PersonalProject = ProjectBase & {
   category: 'Personal'
+  period: LocalizedText
   illustrationCaption: LocalizedText
+  deliveryExample: { image: string; alt: LocalizedText; caption: LocalizedText }
   scopeNote: LocalizedText
   repositoryUrl: string
 }
@@ -172,10 +174,16 @@ export const projects: Project[] = [
       en: 'Built around my interest in NPB and MLB, this project uses a weekly ChatGPT task to prepare a baseball digest. A custom MCP tool hosted on Vercel receives the finalized text and sends it to a LINE group through the LINE Messaging API.',
       ja: 'NPBとMLBへの関心から作った個人プロジェクトです。ChatGPTの定期タスクで野球の週間ダイジェストを作成し、Vercel上のMCPツールを経由してLINE Messaging APIでグループへ配信します。',
     },
+    period: { en: '2026.09 - 2026.09', ja: '2026年9月 - 2026年9月' },
     coverImage: '/project/weekly-digest-cover.svg',
     illustrationCaption: {
       en: 'Conceptual illustration of the delivery flow; this is not a screenshot of an actual LINE message.',
       ja: '配信の流れを表した概念図です。実際のLINEメッセージの画面ではありません。',
+    },
+    deliveryExample: {
+      image: '/project/weekly-digest-example.jpg',
+      alt: { en: 'Actual NPB and MLB weekly digest delivered to a LINE group', ja: 'LINEグループに配信されたNPB・MLB週間ダイジェストの実際の画面' },
+      caption: { en: 'An actual weekly digest delivered to a LINE group.', ja: 'LINEグループに配信した週間ダイジェストの実際の画面です。' },
     },
     skills: ['ChatGPT', 'MCP', 'LINE Messaging API', 'Vercel', 'Next.js', 'TypeScript'],
     steps: [

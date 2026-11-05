@@ -133,11 +133,9 @@ export default function Projects() {
                         <Typography variant="body2" sx={{ opacity: 0.8, lineHeight: 1.5, mb: 0.75 }}>
                           {project.cardDescription[locale]}
                         </Typography>
-                        {project.category === 'Research' && (
-                          <Typography variant="body2" sx={{ opacity: 0.6, mb: 1.5 }}>
-                            {project.period[locale]}
-                          </Typography>
-                        )}
+                        <Typography variant="body2" sx={{ opacity: 0.6, mb: 1.5 }}>
+                          {project.period[locale]}
+                        </Typography>
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, mt: 'auto' }}>
                           {project.skills.slice(0, 4).map(skill => (
                             <Chip
@@ -193,7 +191,7 @@ export default function Projects() {
               <Box sx={{ minWidth: 0 }}>
                 <Typography variant="body2" sx={{ opacity: 0.6, mb: 1 }}>
                   {text.projects.categories[selectedProject.category]}
-                  {selectedProject.category === 'Research' ? ` · ${selectedProject.period[locale]}` : ''}
+                  {` · ${selectedProject.period[locale]}`}
                 </Typography>
                 <Typography id="project-detail-title" component="h2" variant="h5" sx={{ fontWeight: 700, fontSize: { xs: '1.3rem', sm: '1.5rem' }, lineHeight: 1.25, overflowWrap: 'anywhere' }}>
                   {selectedProject.title[locale]}
@@ -331,6 +329,23 @@ export default function Projects() {
                       <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.78, lineHeight: 1.65 }}>{item.caption[locale]}</Typography>
                     </Box>
                   ))}
+                </Box>
+              </Box>
+            )}
+
+            {selectedProject.category === 'Personal' && (
+              <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
+                <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.deliveryExample}</Typography>
+                <Box component="figure" sx={{ m: 0, mt: 2 }}>
+                  <Link href={selectedProject.deliveryExample.image} target="_blank" rel="noopener noreferrer" aria-label={text.projects.viewFullImage} sx={{ display: 'block', width: '100%', maxWidth: 360 }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: { xs: 440, sm: 540 }, overflow: 'hidden', borderRadius: 1, backgroundColor: '#1f1f1f', border: '1px solid rgba(128,128,128,0.35)' }}>
+                      <Image src={selectedProject.deliveryExample.image} alt={selectedProject.deliveryExample.alt[locale]} fill sizes="(max-width: 600px) 100vw, 360px" style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                    </Box>
+                  </Link>
+                  <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.78, lineHeight: 1.65 }}>{selectedProject.deliveryExample.caption[locale]}</Typography>
+                  <Link href={selectedProject.deliveryExample.image} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 1.5, color: 'var(--foreground)' }}>
+                    {text.projects.viewFullImage}<FiExternalLink aria-hidden="true" />
+                  </Link>
                 </Box>
               </Box>
             )}
