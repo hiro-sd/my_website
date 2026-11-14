@@ -7,6 +7,7 @@ import DataBackground from './common/DataBackground'
 import Gallery from './sections/Gallery'
 import Hero from './sections/Hero'
 import Navbar from './common/Navbar'
+import Notes from './sections/Notes'
 import Projects from './sections/Projects'
 import { LanguageProvider, useLanguage } from '../i18n/LanguageContext'
 import type { Locale } from '../i18n/content'
@@ -36,6 +37,7 @@ function PortfolioContent() {
           </Box>
         </section>
 
+        <Notes />
         <Gallery />
       </main>
     </>
@@ -49,4 +51,3 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
     </LanguageProvider>
   )
 }
-

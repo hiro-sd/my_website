@@ -22,6 +22,7 @@ const navItems = [
   { key: 'about', href: '#about' },
   { key: 'projects', href: '#projects' },
   { key: 'background', href: '#backgrounds' },
+  { key: 'notes', href: '#notes' },
   { key: 'gallery', href: '#gallery' },
 ]
 

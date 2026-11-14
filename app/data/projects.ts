@@ -33,6 +33,7 @@ type PersonalProject = ProjectBase & {
   period: LocalizedText
   illustrationCaption: LocalizedText
   deliveryExample: { image: string; alt: LocalizedText; caption: LocalizedText }
+  lineJoin?: { qrImage: string; url: string }
   scopeNote: LocalizedText
   repositoryUrl: string
 }
@@ -167,12 +168,12 @@ export const projects: Project[] = [
     title: { en: 'NPB/MLB Weekly Digest for LINE', ja: 'NPB・MLB週間ダイジェストのLINE配信' },
     tagline: { en: 'A week of baseball, delivered to LINE.', ja: '野球の1週間を、LINEに届ける' },
     cardDescription: {
-      en: 'A personal workflow connecting ChatGPT, an MCP server, and the LINE Messaging API.',
-      ja: 'ChatGPTで作成した週間ダイジェストを、MCPサーバー経由でLINEグループへ届ける。',
+      en: 'A weekly ChatGPT digest delivered to LINE groups that invite the account.',
+      ja: 'ChatGPTで作成した週間ダイジェストを、アカウントを招待したLINEグループへ届ける。',
     },
     overview: {
-      en: 'Built around my interest in NPB and MLB, this project uses a weekly ChatGPT task to prepare a baseball digest. A custom MCP tool hosted on Vercel receives the finalized text and sends it to a LINE group through the LINE Messaging API.',
-      ja: 'NPBとMLBへの関心から作った個人プロジェクトです。ChatGPTの定期タスクで野球の週間ダイジェストを作成し、Vercel上のMCPツールを経由してLINE Messaging APIでグループへ配信します。',
+      en: 'Built around my interest in NPB and MLB, this project uses a weekly ChatGPT task to prepare a baseball digest. A custom MCP tool hosted on Vercel sends the finalized text through the LINE Messaging API to groups that have invited the LINE Official Account.',
+      ja: 'NPBとMLBへの関心から作った個人プロジェクトです。ChatGPTの定期タスクで週間ダイジェストを作成し、Vercel上のMCPツールとLINE Messaging APIを通じて、公式アカウントを招待したグループへ同じ内容を配信します。',
     },
     period: { en: '2026.09 - 2026.09', ja: '2026年9月 - 2026年9月' },
     coverImage: '/project/weekly-digest-cover.svg',
@@ -184,6 +185,10 @@ export const projects: Project[] = [
       image: '/project/weekly-digest-example.jpg',
       alt: { en: 'Actual NPB and MLB weekly digest delivered to a LINE group', ja: 'LINEグループに配信されたNPB・MLB週間ダイジェストの実際の画面' },
       caption: { en: 'An actual weekly digest delivered to a LINE group.', ja: 'LINEグループに配信した週間ダイジェストの実際の画面です。' },
+    },
+    lineJoin: {
+      qrImage: '/project/weekly-digest-line-qr.png',
+      url: 'https://lin.ee/vwlI9vO',
     },
     skills: ['ChatGPT', 'MCP', 'LINE Messaging API', 'Vercel', 'Next.js', 'TypeScript'],
     steps: [
@@ -197,13 +202,13 @@ export const projects: Project[] = [
       },
       {
         title: { en: 'Deliver to LINE', ja: 'LINEへ配信する' },
-        description: { en: 'The Vercel-hosted server sends the text to a fixed LINE group through the Messaging API, splitting long messages when needed.', ja: 'Vercel上のサーバーが必要に応じて長文を分割し、Messaging APIで送信先を固定したLINEグループへ配信します。' },
+        description: { en: 'The Vercel-hosted server delivers the same digest to LINE groups that have invited the Official Account, splitting long messages when needed.', ja: 'Vercel上のサーバーが必要に応じて長文を分割し、公式アカウントを招待したLINEグループそれぞれへ同じダイジェストを配信します。' },
       },
     ],
     implementation: [
-      { en: 'The LINE destination and credentials stay on the server; a private capability URL protects the MCP endpoint.', ja: 'LINEの送信先と認証情報はサーバー側で管理し、非公開の認証用URLでMCPエンドポイントを保護。' },
+      { en: 'LINE credentials and delivery settings remain on the server; a private capability URL protects the MCP endpoint.', ja: 'LINEの認証情報と配信設定はサーバー側で管理し、非公開の認証用URLでMCPエンドポイントを保護。' },
       { en: 'Message splitting respects LINE limits, while a deterministic retry key reduces duplicate posts on retries.', ja: 'LINEの文字数制限に合わせて本文を分割し、再送時の重複を抑えるリトライキーを使用。' },
-      { en: 'The webhook verifies LINE signatures before processing events used to configure the destination group.', ja: '送信先グループの設定に使うWebhookでは、イベント処理前にLINEの署名を検証。' },
+      { en: 'The webhook verifies LINE signatures before processing group-related events.', ja: 'グループに関するWebhookイベントを処理する前に、LINEの署名を検証。' },
     ],
     scopeNote: {
       en: 'The public repository contains the delivery server. Digest writing and the weekly trigger are outside this codebase.',

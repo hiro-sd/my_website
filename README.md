@@ -10,6 +10,7 @@ Live site: [https://hirotoyoshida.vercel.app](https://hirotoyoshida.vercel.app)
 - **About** - Personal background, interests, research field, and photos
 - **Projects** - Research and personal projects with category labels, technical details, and source links where available
 - **Background** - Education, publications, internships, and certifications
+- **Notes** - Planned technical writing on software engineering, acoustics, and computer vision
 - **Gallery** - Responsive travel gallery with captions and enlarged photo dialogs
 
 ## Features
@@ -49,6 +50,10 @@ Create and verify a production build:
 npm run build
 npm run start
 ```
+
+## Notes Drafts
+
+The Notes cards list planned topics; they do not link to empty articles. Reusable Japanese and English Markdown outlines live in `content/notes/_template.ja.md` and `content/notes/_template.en.md`. Topic titles and related project slugs are kept in `app/data/notes.ts`. When an article is ready, add its Markdown content and a reading page before enabling its card link. MDX can be added later if an article needs interactive diagrams.
 
 ## Deployment
 

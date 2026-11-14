@@ -8,6 +8,7 @@ export const content = {
       about: 'About',
       projects: 'Projects',
       background: 'Background',
+      notes: 'Notes',
       gallery: 'Gallery',
     },
     language: {
@@ -17,7 +18,12 @@ export const content = {
     sections: {
       projects: 'Projects',
       background: 'Background',
+      notes: 'Notes',
       gallery: 'Gallery',
+    },
+    notes: {
+      intro: 'Technical notes from research and personal projects. They reflect my own understanding and may contain mistakes.',
+      status: 'In preparation',
     },
     hero: {
       introduction: "I'm a Master's student at",
@@ -108,6 +114,10 @@ export const content = {
       sourceCode: 'Source Code',
       deliveryExample: 'Delivery Example',
       viewFullImage: 'View full screenshot',
+      joinDigest: 'Get the Weekly Digest',
+      joinDigestDescription: 'Add the LINE Official Account, then invite it to a LINE group to receive the same weekly digest there.',
+      addOnLine: 'Add on LINE',
+      lineQrAlt: 'QR code to add the NPB/MLB Weekly Digest LINE Official Account',
       publicLinkPending: 'Public paper link not yet available.',
     },
     gallery: {
@@ -121,6 +131,7 @@ export const content = {
       about: '自己紹介',
       projects: 'プロジェクト',
       background: '経歴',
+      notes: 'ノート',
       gallery: 'ギャラリー',
     },
     language: {
@@ -130,7 +141,12 @@ export const content = {
     sections: {
       projects: 'プロジェクト',
       background: '経歴',
+      notes: 'ノート',
       gallery: 'ギャラリー',
+    },
+    notes: {
+      intro: '研究や個人開発を通して学んだ技術を記録します。内容は自分なりの理解に基づいているため、誤りが含まれる可能性があります。',
+      status: '執筆予定',
     },
     hero: {
       introduction: '東京大学大学院新領域創成科学研究科の',
@@ -221,6 +237,10 @@ export const content = {
       sourceCode: 'ソースコード',
       deliveryExample: '配信例',
       viewFullImage: 'スクリーンショット全体を見る',
+      joinDigest: '週間ダイジェストを受け取る',
+      joinDigestDescription: 'LINE公式アカウントを友だち追加し、受け取りたいLINEグループへ招待してください。そのグループにも同じ週間ダイジェストが届きます。',
+      addOnLine: 'LINEで友だち追加',
+      lineQrAlt: 'NPB・MLB週間ダイジェストのLINE公式アカウントを追加するQRコード',
       publicLinkPending: '公開論文へのリンクは未掲載です。',
     },
     gallery: {

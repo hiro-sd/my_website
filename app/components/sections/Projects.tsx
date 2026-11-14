@@ -333,6 +333,23 @@ export default function Projects() {
               </Box>
             )}
 
+            {selectedProject.category === 'Personal' && selectedProject.lineJoin && (
+              <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
+                <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.joinDigest}</Typography>
+                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'flex-start', sm: 'center' }, gap: 3, mt: 2 }}>
+                  <Link href={selectedProject.lineJoin.url} target="_blank" rel="noopener noreferrer" sx={{ display: 'block', flexShrink: 0, p: 1, borderRadius: 1, backgroundColor: '#fff' }}>
+                    <Image src={selectedProject.lineJoin.qrImage} alt={text.projects.lineQrAlt} width={208} height={208} unoptimized style={{ display: 'block', width: 208, height: 208 }} />
+                  </Link>
+                  <Box sx={{ maxWidth: 540 }}>
+                    <Typography variant="body2" sx={{ opacity: 0.8, lineHeight: 1.75 }}>{text.projects.joinDigestDescription}</Typography>
+                    <Link href={selectedProject.lineJoin.url} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 2, color: 'var(--foreground)', fontWeight: 650 }}>
+                      {text.projects.addOnLine}<FiExternalLink aria-hidden="true" />
+                    </Link>
+                  </Box>
+                </Box>
+              </Box>
+            )}
+
             {selectedProject.category === 'Personal' && (
               <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
                 <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.deliveryExample}</Typography>
