@@ -23,6 +23,7 @@ type ResearchProject = ProjectBase & {
   period: LocalizedText
   video: string
   demoCaption: LocalizedText
+  setupPhoto?: { image: string; alt: LocalizedText; caption: LocalizedText }
   keyResult: { value: string; label: LocalizedText; context: LocalizedText }
   evidence: { image: string; alt: LocalizedText; caption: LocalizedText }[]
   publication: { venue: LocalizedText; citation: LocalizedText; url?: string }
@@ -112,8 +113,19 @@ export const projects: Project[] = [
     cardDescription: { en: 'Track a falling ball and capture it in mid-air with real-time control.', ja: '落下する球体を追跡し、リアルタイム制御で空中捕捉する。' },
     overview: { en: 'A vision-guided acoustic system detects the release of a 40 mm sphere, predicts its fall, brakes it with ultrasound, and attempts to hold it in mid-air without contact.', ja: '直径約40 mmの球体の解放を検知し、落下運動を予測して、超音波で減速・保持する非接触捕捉システムです。' },
     period: { en: '2026.06 - current', ja: '2026年6月 - 現在' },
-    video: '/project/acoustic_handoff.mp4',
+    video: '/project/capture-si-demo.mp4',
     demoCaption: { en: 'A sphere released by hand is braked and held in mid-air by ultrasound without contact.', ja: '手から解放した球体を、超音波で減速し、触れずに空中へ保持する様子です。' },
+    setupPhoto: {
+      image: '/project/details/capture-setup.webp',
+      alt: {
+        en: 'Free-fall capture setup with two cameras, a sphere held before release, and ultrasonic phased arrays below',
+        ja: '上方と側方の2台のカメラ、解放前の球体、下部の超音波フェーズドアレイからなる落下捕捉実験装置',
+      },
+      caption: {
+        en: 'Experimental setup: cameras above and beside the sphere track its fall, while the ultrasonic phased arrays below brake and hold it.',
+        ja: '実験セットアップ。上方と側方のカメラで球体の落下を追跡し、下部の超音波フェーズドアレイで減速・保持します。',
+      },
+    },
     coverImage: '/project/acoustic-handoff-cover.webp',
     skills: ['Python', 'OpenCV', 'AUTD3', 'Stereo Vision', 'Motion Prediction', 'Feedback Control'],
     keyResult: {

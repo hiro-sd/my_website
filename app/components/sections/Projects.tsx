@@ -313,6 +313,21 @@ export default function Projects() {
                   </Box>
                 ))}
               </Box>
+              {selectedProject.category === 'Research' && selectedProject.setupPhoto && (
+                <Box component="figure" sx={{ m: 0, mt: 4, mx: 'auto', maxWidth: 360 }}>
+                  <Typography component="h4" variant="body2" sx={{ mb: 1.5, fontWeight: 700 }}>
+                    {locale === 'ja' ? '実験セットアップ' : 'Experimental setup'}
+                  </Typography>
+                  <Link href={selectedProject.setupPhoto.image} target="_blank" rel="noopener noreferrer" aria-label={selectedProject.setupPhoto.alt[locale]} sx={{ display: 'block' }}>
+                    <Box sx={{ position: 'relative', width: '100%', aspectRatio: '3 / 4', backgroundColor: '#111', borderRadius: 1, overflow: 'hidden' }}>
+                      <Image src={selectedProject.setupPhoto.image} alt={selectedProject.setupPhoto.alt[locale]} fill sizes="(max-width: 600px) 100vw, 360px" style={{ objectFit: 'contain' }} />
+                    </Box>
+                  </Link>
+                  <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.78, lineHeight: 1.65 }}>
+                    {selectedProject.setupPhoto.caption[locale]}
+                  </Typography>
+                </Box>
+              )}
             </Box>
 
             {selectedProject.category === 'Research' && (
