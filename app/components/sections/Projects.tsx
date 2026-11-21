@@ -207,21 +207,35 @@ export default function Projects() {
 
             {selectedProject.category === 'Research' ? (
               <>
-                <Box component="figure" sx={{ m: 0, mt: 3 }}>
-                  <Box sx={{ height: { xs: 260, sm: 330, md: 380 }, backgroundColor: '#050505', borderRadius: 1, overflow: 'hidden' }}>
-                    <video
-                      key={selectedProject.video}
-                      autoPlay muted loop playsInline preload="metadata"
-                      poster={selectedProject.coverImage}
-                      aria-label={`${selectedProject.title[locale]} ${text.projects.demonstration}`}
-                      className="h-full w-full object-contain"
-                    >
-                      <source src={selectedProject.video} type="video/mp4" />
-                    </video>
+                <Box sx={{ display: 'grid', gridTemplateColumns: selectedProject.setupPhoto ? { xs: '1fr', md: 'minmax(0, 0.8fr) minmax(0, 1.7fr)' } : '1fr', gap: 2.5, mt: 3, alignItems: 'start' }}>
+                  {selectedProject.setupPhoto && (
+                    <Box component="figure" sx={{ m: 0, minWidth: 0 }}>
+                      <Link href={selectedProject.setupPhoto.image} target="_blank" rel="noopener noreferrer" aria-label={selectedProject.setupPhoto.alt[locale]} sx={{ display: 'block' }}>
+                        <Box sx={{ position: 'relative', height: { xs: 260, sm: 330, md: 380 }, backgroundColor: '#111', borderRadius: 1, overflow: 'hidden' }}>
+                          <Image src={selectedProject.setupPhoto.image} alt={selectedProject.setupPhoto.alt[locale]} fill sizes="(max-width: 900px) 100vw, 35vw" style={{ objectFit: 'contain' }} />
+                        </Box>
+                      </Link>
+                      <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
+                        {selectedProject.setupPhoto.caption[locale]}
+                      </Typography>
+                    </Box>
+                  )}
+                  <Box component="figure" sx={{ m: 0, minWidth: 0 }}>
+                    <Box sx={{ height: { xs: 260, sm: 330, md: 380 }, backgroundColor: '#050505', borderRadius: 1, overflow: 'hidden' }}>
+                      <video
+                        key={selectedProject.video}
+                        autoPlay muted loop playsInline preload="metadata"
+                        poster={selectedProject.coverImage}
+                        aria-label={`${selectedProject.title[locale]} ${text.projects.demonstration}`}
+                        className="h-full w-full object-contain"
+                      >
+                        <source src={selectedProject.video} type="video/mp4" />
+                      </video>
+                    </Box>
+                    <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
+                      {selectedProject.demoCaption[locale]}
+                    </Typography>
                   </Box>
-                  <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
-                    {selectedProject.demoCaption[locale]}
-                  </Typography>
                 </Box>
 
                 <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
@@ -240,13 +254,34 @@ export default function Projects() {
                 </Box>
               </>
             ) : (
-              <Box component="figure" sx={{ m: 0, mt: 3 }}>
-                <Box sx={{ position: 'relative', width: '100%', aspectRatio: '16 / 9', maxHeight: 380, backgroundColor: '#0d1117', borderRadius: 1, overflow: 'hidden' }}>
-                  <Image src={selectedProject.coverImage} alt="" fill sizes="(max-width: 900px) 100vw, 900px" className="object-contain" />
+              <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, minmax(0, 1fr))' }, gap: 2.5, mt: 3, alignItems: 'start' }}>
+                <Box component="figure" sx={{ m: 0, minWidth: 0 }}>
+                  <Box sx={{ position: 'relative', width: '100%', aspectRatio: { xs: '16 / 9', md: 'auto' }, height: { md: 380 }, backgroundColor: '#0d1117', borderRadius: 1, overflow: 'hidden' }}>
+                    <Image src={selectedProject.coverImage} alt="" fill sizes="(max-width: 900px) 100vw, 50vw" className="object-contain" />
+                  </Box>
+                  <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
+                    {selectedProject.illustrationCaption[locale]}
+                  </Typography>
                 </Box>
-                <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
-                  {selectedProject.illustrationCaption[locale]}
-                </Typography>
+                <Box component="figure" sx={{ m: 0, minWidth: 0 }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: { md: 380 }, backgroundColor: '#0d1117', borderRadius: 1, overflow: 'hidden' }}>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 1.25, width: '100%', maxWidth: 455 }}>
+                      {(['top', 'bottom'] as const).map((half, index) => (
+                        <Link key={half} href={selectedProject.deliveryExample.image} target="_blank" rel="noopener noreferrer" aria-label={`${text.projects.viewFullImage} ${index + 1}`} sx={{ display: 'block', minWidth: 0 }}>
+                          <Box sx={{ position: 'relative', width: '100%', aspectRatio: '786 / 1346', overflow: 'hidden', backgroundColor: '#1f1f1f' }}>
+                            <Image src={selectedProject.deliveryExample.image} alt={`${selectedProject.deliveryExample.alt[locale]} (${index + 1}/2)`} fill sizes="(max-width: 900px) 45vw, 225px" style={{ objectFit: 'cover', objectPosition: half }} />
+                          </Box>
+                        </Link>
+                      ))}
+                    </Box>
+                  </Box>
+                  <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
+                    {selectedProject.deliveryExample.caption[locale]}
+                  </Typography>
+                  <Link href={selectedProject.deliveryExample.image} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 1, color: 'var(--foreground)' }}>
+                    {text.projects.viewFullImage}<FiExternalLink aria-hidden="true" />
+                  </Link>
+                </Box>
               </Box>
             )}
 
@@ -313,21 +348,6 @@ export default function Projects() {
                   </Box>
                 ))}
               </Box>
-              {selectedProject.category === 'Research' && selectedProject.setupPhoto && (
-                <Box component="figure" sx={{ m: 0, mt: 4, mx: 'auto', maxWidth: 360 }}>
-                  <Typography component="h4" variant="body2" sx={{ mb: 1.5, fontWeight: 700 }}>
-                    {locale === 'ja' ? '実験セットアップ' : 'Experimental setup'}
-                  </Typography>
-                  <Link href={selectedProject.setupPhoto.image} target="_blank" rel="noopener noreferrer" aria-label={selectedProject.setupPhoto.alt[locale]} sx={{ display: 'block' }}>
-                    <Box sx={{ position: 'relative', width: '100%', aspectRatio: '3 / 4', backgroundColor: '#111', borderRadius: 1, overflow: 'hidden' }}>
-                      <Image src={selectedProject.setupPhoto.image} alt={selectedProject.setupPhoto.alt[locale]} fill sizes="(max-width: 600px) 100vw, 360px" style={{ objectFit: 'contain' }} />
-                    </Box>
-                  </Link>
-                  <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.78, lineHeight: 1.65 }}>
-                    {selectedProject.setupPhoto.caption[locale]}
-                  </Typography>
-                </Box>
-              )}
             </Box>
 
             {selectedProject.category === 'Research' && (
@@ -361,23 +381,6 @@ export default function Projects() {
                       {text.projects.addOnLine}<FiExternalLink aria-hidden="true" />
                     </Link>
                   </Box>
-                </Box>
-              </Box>
-            )}
-
-            {selectedProject.category === 'Personal' && (
-              <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
-                <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.deliveryExample}</Typography>
-                <Box component="figure" sx={{ m: 0, mt: 2 }}>
-                  <Link href={selectedProject.deliveryExample.image} target="_blank" rel="noopener noreferrer" aria-label={text.projects.viewFullImage} sx={{ display: 'block', width: '100%', maxWidth: 360 }}>
-                    <Box sx={{ position: 'relative', width: '100%', height: { xs: 440, sm: 540 }, overflow: 'hidden', borderRadius: 1, backgroundColor: '#1f1f1f', border: '1px solid rgba(128,128,128,0.35)' }}>
-                      <Image src={selectedProject.deliveryExample.image} alt={selectedProject.deliveryExample.alt[locale]} fill sizes="(max-width: 600px) 100vw, 360px" style={{ objectFit: 'cover', objectPosition: 'top' }} />
-                    </Box>
-                  </Link>
-                  <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.78, lineHeight: 1.65 }}>{selectedProject.deliveryExample.caption[locale]}</Typography>
-                  <Link href={selectedProject.deliveryExample.image} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 1.5, color: 'var(--foreground)' }}>
-                    {text.projects.viewFullImage}<FiExternalLink aria-hidden="true" />
-                  </Link>
                 </Box>
               </Box>
             )}
