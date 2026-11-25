@@ -11,6 +11,7 @@ import {
 import { motion } from 'framer-motion'
 import { FiChevronDown } from 'react-icons/fi'
 import AnimatedText from '../common/AnimatedText'
+import { stabilizationPaperUrl } from '../../data/projects'
 import { useLanguage } from '../../i18n/LanguageContext'
 
 const gradientHoverLinkClass =
@@ -100,7 +101,11 @@ export default function CourseTimeline() {
                 ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;<strong className="font-semibold">Feedback Control for Capturing a Sphere in Free Fall Using an Ultrasonic Phased Array</strong>&quot; SICE SI 2026, 2026, Dec.8-10, Osaka, Japan.
               </p>
               <p className="text-base leading-normal text-[var(--foreground)]/80">
-                ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;<strong className="font-semibold">Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array</strong>&quot; SICE Festival 2026 with Annual Conference, 2026, pp. 714-719, Sep.14-17, Yokohama, Japan.
+                ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;
+                <a href={stabilizationPaperUrl} target="_blank" rel="noopener noreferrer" className={gradientHoverLinkClass}>
+                  <strong className="font-semibold">Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array</strong>
+                </a>
+                &quot; SICE Festival 2026 with Annual Conference, 2026, pp. 714-719, Sep.14-17, Yokohama, Japan.
               </p>
               <p className="text-base leading-normal text-[var(--foreground)]/80">
                 ・Hiroto Yoshida, Gakuto Arakawa, Shun Suzuki, Yasutoshi Makino, Hiroyuki Shinoda. &quot;

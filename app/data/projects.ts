@@ -41,6 +41,8 @@ type PersonalProject = ProjectBase & {
 
 export type Project = ResearchProject | PersonalProject
 
+export const stabilizationPaperUrl = 'https://doi.org/10.23919/sicefes71276.2026.11739185'
+
 export const projects: Project[] = [
   {
     id: 1,
@@ -101,6 +103,7 @@ export const projects: Project[] = [
     publication: {
       venue: { en: 'SICE Festival 2026 with Annual Conference', ja: 'SICE Festival 2026 with Annual Conference' },
       citation: { en: 'H. Yoshida et al., “Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array,” 2026, pp. 714-719.', ja: '吉田寛人ほか「Stabilization of Sphere Levitation Using Feedback Control with an Ultrasonic Phased Array」2026年, pp. 714-719.' },
+      url: stabilizationPaperUrl,
     },
   },
   {
