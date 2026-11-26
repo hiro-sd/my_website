@@ -257,7 +257,7 @@ export default function Projects() {
               <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, minmax(0, 1fr))' }, gap: 2.5, mt: 3, alignItems: 'start' }}>
                 <Box component="figure" sx={{ m: 0, minWidth: 0 }}>
                   <Box sx={{ position: 'relative', width: '100%', aspectRatio: { xs: '16 / 9', md: 'auto' }, height: { md: 380 }, backgroundColor: '#0d1117', borderRadius: 1, overflow: 'hidden' }}>
-                    <Image src={selectedProject.coverImage} alt="" fill sizes="(max-width: 900px) 100vw, 50vw" className="object-contain" />
+                    <Image src={selectedProject.illustrationImage} alt="" fill sizes="(max-width: 900px) 100vw, 50vw" className="object-contain" />
                   </Box>
                   <Typography component="figcaption" variant="body2" sx={{ mt: 1, opacity: 0.72, lineHeight: 1.6 }}>
                     {selectedProject.illustrationCaption[locale]}

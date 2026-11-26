@@ -32,6 +32,7 @@ type ResearchProject = ProjectBase & {
 type PersonalProject = ProjectBase & {
   category: 'Personal'
   period: LocalizedText
+  illustrationImage: string
   illustrationCaption: LocalizedText
   deliveryExample: { image: string; alt: LocalizedText; caption: LocalizedText }
   lineJoin?: { qrImage: string; url: string }
@@ -191,7 +192,8 @@ export const projects: Project[] = [
       ja: 'NPBとMLBへの関心から作った個人プロジェクトです。ChatGPTの定期タスクで週間ダイジェストを作成し、Vercel上のMCPツールとLINE Messaging APIを通じて、公式アカウントを招待したグループへ同じ内容を配信します。',
     },
     period: { en: '2026.09 - 2026.09', ja: '2026年9月 - 2026年9月' },
-    coverImage: '/project/weekly-digest-cover.svg',
+    coverImage: '/project/weekly-digest-thumbnail.webp',
+    illustrationImage: '/project/weekly-digest-flow.svg',
     illustrationCaption: {
       en: 'Conceptual illustration of the delivery flow; this is not a screenshot of an actual LINE message.',
       ja: '配信の流れを表した概念図です。実際のLINEメッセージの画面ではありません。',

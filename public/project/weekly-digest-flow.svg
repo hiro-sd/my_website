@@ -13,6 +13,18 @@
     <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="20" stdDeviation="26" flood-color="#000" flood-opacity="0.35"/>
     </filter>
+    <g id="baseball-seam" fill="none" stroke-linecap="round">
+      <path d="M195 300Q279 430 195 560" stroke="#bd5048" stroke-width="5"/>
+      <path d="M195 325Q206 325 219 315
+               M208 352Q220 350 231 340
+               M217 380Q229 378 240 368
+               M222 408Q234 405 245 396
+               M225 436Q237 433 248 424
+               M222 464Q234 461 245 452
+               M217 492Q229 489 240 480
+               M208 520Q220 518 231 508
+               M195 546Q206 545 219 536" stroke="#bd5048" stroke-width="8"/>
+    </g>
   </defs>
   <rect width="1600" height="900" fill="url(#background)"/>
   <path d="M0 144H1600M0 756H1600" stroke="#333d43" stroke-width="2" opacity=".55"/>
@@ -20,8 +32,8 @@
 
   <circle cx="275" cy="430" r="160" fill="#f4f4ed" filter="url(#shadow)"/>
   <circle cx="275" cy="430" r="153" fill="none" stroke="#dce2de" stroke-width="3"/>
-  <path d="M195 295C260 361 260 499 195 565M355 295C290 361 290 499 355 565" fill="none" stroke="#c85750" stroke-width="8" stroke-linecap="round"/>
-  <path d="M211 319l-24 19m40 2-27 20m37 8-29 20m31 9-30 20m31 9-30 20m28 9-28 20m26 10-27 20m24 11-25 19M339 319l24 19m-40 2 27 20m-37 8 29 20m-31 9 30 20m-31 9 30 20m-28 9 28 20m-26 10 27 20m-24 11 25 19" fill="none" stroke="#c85750" stroke-width="5" stroke-linecap="round"/>
+  <use href="#baseball-seam"/>
+  <use href="#baseball-seam" transform="translate(550 0) scale(-1 1)"/>
   <text x="275" y="665" fill="#d3d9da" font-family="Arial, sans-serif" font-size="47" font-weight="700" text-anchor="middle">NPB / MLB</text>
 
   <path d="M475 430h95" fill="none" stroke="#78b8bc" stroke-width="7" stroke-linecap="round"/>
