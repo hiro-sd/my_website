@@ -66,7 +66,7 @@ export const projects: Project[] = [
       en: 'Watch the sphere remain near its target height as the acoustic field responds to its motion.',
       ja: '球体の動きに合わせて音場を更新し、目標の高さ付近に保つ様子をご覧ください。',
     },
-    coverImage: '/project/feedback-stabilization-cover.webp',
+    coverImage: '/project/research-stabilization-single-array-icon.webp',
     skills: ['Python', 'OpenCV', 'AUTD3', 'Stereo Vision', 'PID Control', 'STM'],
     keyResult: {
       value: '44%',
@@ -130,7 +130,7 @@ export const projects: Project[] = [
         ja: '実験セットアップ。上方と側方のカメラで球体の落下を追跡し、下部の超音波フェーズドアレイで減速・保持します。',
       },
     },
-    coverImage: '/project/acoustic-handoff-cover.webp',
+    coverImage: '/project/research-free-fall-array-icon-spaced-waves.webp',
     skills: ['Python', 'OpenCV', 'AUTD3', 'Stereo Vision', 'Motion Prediction', 'Feedback Control'],
     keyResult: {
       value: '54 / 100',
