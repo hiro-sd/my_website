@@ -417,7 +417,7 @@ export default function Projects() {
               <Box component="section" sx={{ mt: 5, pt: 2.5, borderTop: '1px solid rgba(128,128,128,0.3)' }}>
                 <Typography component="h3" variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>{text.projects.sourceCode}</Typography>
                 <Typography variant="body2" sx={{ mt: 1.5, opacity: 0.78, lineHeight: 1.7 }}>{selectedProject.scopeNote[locale]}</Typography>
-                <Link href={selectedProject.repositoryUrl} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 1.5, color: 'var(--foreground)' }}>
+                <Link href={selectedProject.repositoryUrl} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, mt: 1.5 }}>
                   GitHub<FiExternalLink aria-hidden="true" />
                 </Link>
               </Box>
