@@ -44,6 +44,9 @@ export type Project = ResearchProject | PersonalProject
 
 export const stabilizationPaperUrl = 'https://doi.org/10.23919/sicefes71276.2026.11739185'
 
+// Restore the media from drafts/acoustic-handoff-recovery to public/project before republishing.
+const publishFreeFallCapture = false
+
 export const projects: Project[] = [
   {
     id: 1,
@@ -107,7 +110,7 @@ export const projects: Project[] = [
       url: stabilizationPaperUrl,
     },
   },
-  {
+  ...(publishFreeFallCapture ? [{
     id: 2,
     slug: 'acoustic-handoff-recovery',
     category: 'Research',
@@ -175,7 +178,7 @@ export const projects: Project[] = [
       venue: { en: 'SICE SI 2026 · Dec. 8-10, 2026 (upcoming)', ja: 'SICE SI 2026 · 2026年12月8–10日（開催予定）' },
       citation: { en: 'H. Yoshida et al., “Feedback Control for Capturing a Sphere in Free Fall Using an Ultrasonic Phased Array.”', ja: '吉田寛人ほか「超音波フェーズドアレイによる自由落下する球体の捕捉制御」' },
     },
-  },
+  } satisfies ResearchProject] : []),
   {
     id: 3,
     slug: 'npb-mlb-weekly-digest',
