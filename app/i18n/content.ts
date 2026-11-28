@@ -45,7 +45,7 @@ export const content = {
       personalKeywords: ['#NPB', '#MLB', '#SoloTravel', '#Coffee', '#Manga', '#Anime'],
       researchHeading: 'Research Field',
       researchText: 'My research explores the contactless levitation and manipulation of objects using the acoustic radiation pressure generated when ultrasound interacts with a solid surface, as well as applications of this technology to user interfaces and three-dimensional displays. I am particularly fascinated by how control strategies designed in software can take physical form in the behavior of real-world objects.',
-      researchKeywords: ['#AcousticLevitation', '#UltrasonicPhasedArray', '#ContactlessManipulation', '#FeedbackControl', '#ComputerVision', '#HCI'],
+      researchKeywords: ['#AcousticLevitation', '#UltrasonicPhasedArray', '#ContactlessManipulation', '#FeedbackControl', '#HCI'],
     },
     education: {
       items: [
@@ -162,7 +162,7 @@ export const content = {
       personalKeywords: ['#NPB', '#MLB', '#1人旅', '#コーヒー', '#漫画', '#アニメ'],
       researchHeading: '研究分野',
       researchText: '超音波が固体表面に入射する際に生じる音響放射圧を利用した物体の非接触浮揚・操作や、その技術をユーザーインターフェースや3次元ディスプレイなどへ応用するための研究に取り組んでいます。ソフトウェア上で設計した制御が、現実世界の物体の振る舞いとして具現化される点に、この研究の魅力を感じています。',
-      researchKeywords: ['#音響浮揚', '#超音波フェーズドアレイ', '#非接触操作', '#フィードバック制御', '#コンピュータビジョン', '#HCI'],
+      researchKeywords: ['#音響浮揚', '#超音波フェーズドアレイ', '#非接触操作', '#フィードバック制御', '#HCI'],
     },
     education: {
       items: [
