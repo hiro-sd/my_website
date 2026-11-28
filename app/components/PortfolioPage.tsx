@@ -13,8 +13,7 @@ import { LanguageProvider, useLanguage } from '../i18n/LanguageContext'
 import type { Locale } from '../i18n/content'
 
 function PortfolioContent() {
-  const { locale, text } = useLanguage()
-  const headingClass = locale === 'ja' ? 'font-display-space' : 'font-display-outline'
+  const { text } = useLanguage()
 
   return (
     <>
@@ -30,7 +29,7 @@ function PortfolioContent() {
 
         <section id="backgrounds" className="relative">
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 4 }}>
-            <h1 className={`${headingClass} inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12`}>
+            <h1 lang="en" className="font-display-outline inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">
               {text.sections.background}
             </h1>
             <CourseTimeline />

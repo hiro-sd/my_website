@@ -5,8 +5,7 @@ import AnimatedText from "../common/AnimatedText"
 import { useLanguage } from "../../i18n/LanguageContext"
 
 export default function About() { // TODO: Edit this section.
-  const { locale, text } = useLanguage()
-  const headingClass = locale === 'ja' ? 'font-display-space' : 'font-display-outline'
+  const { text } = useLanguage()
   const aboutPhotos = [
     {
       src: "/20230727.JPG",
@@ -30,8 +29,8 @@ export default function About() { // TODO: Edit this section.
       <div className="w-full max-w-6xl space-y-12">
         <AnimatedText>
           <div className="space-y-4 text-center">
-            <h1 className={`${headingClass} inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-8`}>
-              {text.about.heading}
+            <h1 lang="en" className="font-display-outline inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-8">
+              {text.sections.about}
             </h1>
             <p className="mx-auto max-w-3xl text-foreground/70 leading-relaxed">
               {text.about.paragraphs.map((paragraph, index) => (

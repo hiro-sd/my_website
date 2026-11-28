@@ -70,14 +70,13 @@ function NoteVisual({ visual }: { visual: NoteTopic['visual'] }) {
 
 export default function Notes() {
   const { locale, text } = useLanguage()
-  const headingClass = locale === 'ja' ? 'font-display-space' : 'font-display-outline'
 
   return (
     <Container id="notes" maxWidth="xl" component="section">
       <Box sx={{ py: { xs: 10, md: 12 }, px: { xs: 2, sm: 4, md: 8 }, maxWidth: 1180, mx: 'auto' }}>
         <Box sx={{ textAlign: 'center' }}>
           <AnimatedText>
-            <h1 className={`${headingClass} inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-6`}>
+            <h1 lang="en" className="font-display-outline inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-6">
               {text.sections.notes}
             </h1>
           </AnimatedText>

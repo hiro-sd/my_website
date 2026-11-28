@@ -130,7 +130,6 @@ const photos: Photo[] = [
 export default function Gallery() {
   const { locale, text } = useLanguage()
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null)
-  const headingClass = locale === 'ja' ? 'font-display-space' : 'font-display-outline'
 
   return (
     <>
@@ -148,7 +147,7 @@ export default function Gallery() {
         }}>
 
           <AnimatedText>
-            <h1 className={`${headingClass} inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12`}>
+            <h1 lang="en" className="font-display-outline inline-block text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 mb-12">
               {text.sections.gallery}
             </h1>
           </AnimatedText>

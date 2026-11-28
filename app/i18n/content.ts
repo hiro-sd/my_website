@@ -1,6 +1,14 @@
 export type Locale = 'en' | 'ja'
 export type LocalizedText = Record<Locale, string>
 
+const sectionHeadings = {
+  about: 'About Me',
+  projects: 'Projects',
+  background: 'Background',
+  notes: 'Notes',
+  gallery: 'Gallery',
+}
+
 export const content = {
   en: {
     nav: {
@@ -15,12 +23,7 @@ export const content = {
       switchLabel: '日本語に切り替える',
       buttonText: 'JA',
     },
-    sections: {
-      projects: 'Projects',
-      background: 'Background',
-      notes: 'Notes',
-      gallery: 'Gallery',
-    },
+    sections: sectionHeadings,
     notes: {
       intro: 'Technical notes from research and personal projects. They reflect my own understanding and may contain mistakes.',
       status: 'In preparation',
@@ -31,7 +34,6 @@ export const content = {
       research: 'My research interests include acoustic levitation and its real-world applications.',
     },
     about: {
-      heading: 'About Me',
       paragraphs: [
         'I am a graduate student from Chiba, Japan.',
         'I grew up in Chiba and lived there through high school before enrolling at Hokkaido University. There, I majored in Fisheries Science and researched the effective utilization of substances derived from marine organisms.',
@@ -138,12 +140,7 @@ export const content = {
       switchLabel: 'Switch to English',
       buttonText: 'EN',
     },
-    sections: {
-      projects: 'プロジェクト',
-      background: '経歴',
-      notes: 'ノート',
-      gallery: 'ギャラリー',
-    },
+    sections: sectionHeadings,
     notes: {
       intro: '研究や個人開発を通して学んだ技術を記録します。内容は自分なりの理解に基づいているため、誤りが含まれる可能性があります。',
       status: '執筆予定',
@@ -154,7 +151,6 @@ export const content = {
       research: '研究テーマは音響浮揚とその実世界への応用です。',
     },
     about: {
-      heading: '自己紹介',
       paragraphs: [
         '千葉県出身の大学院生です。',
         '高校時代まで地元千葉県で過ごし、大学は北海道大学に入学しました。水産科学を専攻し、海洋生物由来の物質の有効利用について研究していました。',
